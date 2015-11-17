@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   post "recipe/:id/picture/add" => "picture#add"
   post "recipe/:id/ingredient/add" => "recipe#addIngredient"
   post "ingredient/add" => "ingredient#add"
+  get "ingredient/list" => "ingredient#list"
 end

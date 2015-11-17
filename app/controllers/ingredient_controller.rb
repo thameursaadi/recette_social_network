@@ -11,4 +11,8 @@ class IngredientController < ApplicationController
 			@success = false
 		end
 	end
+
+	def list
+		@ingredients=Ingredient.all
+	end
 end

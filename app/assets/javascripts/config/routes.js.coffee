@@ -21,8 +21,8 @@
     controller:  'addPictureCtrl'
     templateUrl: 'assets/templates/home/add-pictures.html'
 
-  .when "/addPictures/:id",
-    controller:  'addPictureCtrl'
-    templateUrl: 'assets/templates/home/add-pictures.html'
+  .when "/addIngredients/:id",
+    controller:  'addIngredientsCtrl'
+    templateUrl: 'assets/templates/home/add-ingredients.html'
 
   .otherwise redirectTo: "/home"
