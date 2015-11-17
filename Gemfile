@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -20,6 +20,8 @@ gem 'coffee-rails'
 gem 'devise'       # authentification
 gem 'angular-rails-templates'
 gem 'angular_rails_csrf'
+gem 'tzinfo-data'
+
 
 
 group :development, :test do

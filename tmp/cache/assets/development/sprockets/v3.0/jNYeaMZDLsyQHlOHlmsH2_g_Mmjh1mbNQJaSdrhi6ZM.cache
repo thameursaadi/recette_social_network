@@ -1,0 +1,16 @@
+I"™(function() {
+  this.cooking.controller('authCtrl', function($scope, Auth, $location) {
+    $scope.login = function() {
+      return Auth.login($scope.user).then(function() {
+        return $location.path('home');
+      });
+    };
+    return $scope.register = function() {
+      return Auth.register($scope.user).then(function() {
+        return $location.path('home');
+      });
+    };
+  });
+
+}).call(this);
+:ET

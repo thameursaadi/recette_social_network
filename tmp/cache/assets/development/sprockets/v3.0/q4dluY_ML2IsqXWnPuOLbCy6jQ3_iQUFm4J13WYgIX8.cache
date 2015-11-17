@@ -1,0 +1,20 @@
+I"*(function() {
+  this.cooking.controller('navCtrl', function($scope, Auth) {
+    $scope.signedIn = Auth.isAuthenticated;
+    $scope.logout = Auth.logout;
+    Auth.currentUser().then(function(user) {
+      return $scope.user = user;
+    });
+    $scope.$on('devise:new-registration', function(e, user) {
+      return $scope.user = user;
+    });
+    $scope.$on('devise:login', function(e, user) {
+      return $scope.user = user;
+    });
+    return $scope.$on('devise:logout', function(e, user) {
+      return $scope.user = {};
+    });
+  });
+
+}).call(this);
+:ET
