@@ -1,0 +1,16 @@
+I"„(function() {
+  this.cooking.controller('addRecipeCtrl', function($scope, $http) {
+    return $scope.addRecipe = function() {
+      var req;
+      req = $http.post("http://localhost:3000/recipe/add.json", {
+        params: {
+          title: $scope.title,
+          description: $scope.description
+        }
+      });
+      return req.then(function(res) {});
+    };
+  });
+
+}).call(this);
+:ET

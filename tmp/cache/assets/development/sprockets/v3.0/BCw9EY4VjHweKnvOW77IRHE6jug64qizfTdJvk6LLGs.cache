@@ -1,0 +1,42 @@
+I"±(function() {
+  this.cooking.controller('addRecipeCtrl', function($scope, $http, $location, recipeId) {
+    $scope.addRecipe = function() {
+      var req;
+      req = $http.post("http://localhost:3000/recipe/add.json", {
+        params: {
+          title: "$scope.recipeName",
+          description: $scope.recipeDescription
+        }
+      });
+      return req.success(function(res) {
+        if (res.success === true) {
+          this.cooking.value("recipeId", res.id);
+          return $location.path("/addPictures");
+        } else {
+          return alert("error");
+        }
+      });
+    };
+    return $scope.addPicture = function() {
+      var req;
+      req = $http.post("http://localhost:3000/recipe/" + recipeId(+"/picture/add.json", {
+        params: {
+          title: "$scope.pictureTitle",
+          description: $scope.pictureDescription,
+          url: $scope.pictureUrl
+        }
+      }));
+      return req.success(function(res) {
+        if (res.success) {
+          $scope.pictureDescription = "";
+          $scope.pictureDescription = "";
+          return $scope.pictureUrl = "";
+        } else {
+          return alert("error");
+        }
+      });
+    };
+  });
+
+}).call(this);
+:ET

@@ -1,0 +1,12 @@
+.home-container{ ng_controller: 'addPictureCtrl' }
+  %form
+    %input.form-control{ placeholder: "title", ng_model: "pictureTitle"}
+    %br
+    %textarea.form-control{ placeholder: "description", ng_model: "pictureDescription"}
+    %br
+    %textarea.form-control{ placeholder: "url", ng_model: "pictureUrl"}
+    %br
+    %button.btn{ ng_click: "addPicture()" }
+      add another
+    %button.btn{ ng_click: "finishAddingPictures()" }
+      finish

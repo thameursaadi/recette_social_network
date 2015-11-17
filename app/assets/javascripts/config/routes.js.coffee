@@ -13,4 +13,16 @@
   .when "/home",
     templateUrl: 'assets/templates/home/index.html'
 
+  .when "/addRecipe",
+    controller:  'addRecipeCtrl'
+    templateUrl: 'assets/templates/home/add-recipe.html'
+
+  .when "/addPictures/:id",
+    controller:  'addPictureCtrl'
+    templateUrl: 'assets/templates/home/add-pictures.html'
+
+  .when "/addPictures/:id",
+    controller:  'addPictureCtrl'
+    templateUrl: 'assets/templates/home/add-pictures.html'
+
   .otherwise redirectTo: "/home"

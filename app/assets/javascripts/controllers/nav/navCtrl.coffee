@@ -15,3 +15,6 @@
 
   $scope.$on 'devise:logout', (e, user) ->
     $scope.user = {}
+
+
+  

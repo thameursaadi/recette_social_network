@@ -1,0 +1,24 @@
+I"(function() {
+  this.cooking.controller('addRecipeCtrl', function($scope, $http, $location) {
+    return $scope.addRecipe = function() {
+      var req;
+      req = $http.post("http://localhost:3000/recipe/add.json", {
+        params: {
+          title: "$scope.recipeName",
+          description: $scope.recipeDescription
+        }
+      });
+      return req.then(function(res) {
+        if (res.success === true) {
+          $scope.recipeId = res.id;
+          $location.path("/addPictures");
+          return alert(res.success === true);
+        } else {
+          return alert("error");
+        }
+      });
+    };
+  });
+
+}).call(this);
+:ET
