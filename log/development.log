@@ -17767,3 +17767,795 @@ Processing by PictureController#add as JSON
 Completed 200 OK in 241ms (Views: 7.5ms | ActiveRecord: 221.9ms)
   [1m[35mRecipe Load (0.2ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 3]]
   [1m[36mPicture Load (0.2ms)[0m  [1mSELECT "pictures".* FROM "pictures" WHERE "pictures"."recipe_id" = ?[0m  [["recipe_id", 3]]
+
+
+Started GET "/assets/templates/add/add-recipe.html" for 127.0.0.1 at 2015-11-19 19:21:14 +0100
+
+
+Started POST "/recipe/add.json" for 127.0.0.1 at 2015-11-19 19:22:48 +0100
+Processing by RecipeController#add as JSON
+  Parameters: {"params"=>{"title"=>"$scope.recipeName"}, "recipe"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "recipes" ("user_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["user_id", 1], ["created_at", "2015-11-19 18:22:48.389777"], ["updated_at", "2015-11-19 18:22:48.389777"]]
+  [1m[35m (257.1ms)[0m  commit transaction
+  Rendered recipe/add.json.jbuilder (0.3ms)
+Completed 200 OK in 275ms (Views: 6.4ms | ActiveRecord: 258.1ms)
+
+
+Started GET "/assets/templates/home/index.html" for 127.0.0.1 at 2015-11-19 19:25:06 +0100
+
+
+Started DELETE "/users/sign_out.json" for 127.0.0.1 at 2015-11-19 19:28:54 +0100
+Processing by Devise::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Completed 204 No Content in 54ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/templates/auth/_register.html" for 127.0.0.1 at 2015-11-19 19:28:58 +0100
+
+
+Started GET "/assets/templates/auth/_login.html" for 127.0.0.1 at 2015-11-19 19:29:03 +0100
+
+
+Started GET "/" for 127.0.0.1 at 2015-11-19 22:50:44 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ApplicationController#angular as HTML
+  Rendered layouts/application.html.haml within layouts/application (2368.5ms)
+Completed 200 OK in 2528ms (Views: 2496.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-f9b30663a0859aad052db3045f1e2db72dbaca2187a3316c4e943e9466c98da8.css?body=1" for 127.0.0.1 at 2015-11-19 22:50:47 +0100
+
+
+Started GET "/assets/controllers/add/addPictureCtrl.self-6e63e1d0ef853acb559ae2b2629103f909d400bf97ec2f56b05dd55b10f43990.js?body=1" for 127.0.0.1 at 2015-11-19 22:50:47 +0100
+
+
+Started GET "/assets/templates/layouts/nav/_nav.html" for 127.0.0.1 at 2015-11-19 22:50:47 +0100
+
+
+Started GET "/assets/templates/add/add-ingredients.html" for 127.0.0.1 at 2015-11-19 22:50:47 +0100
+
+
+Started POST "/users/sign_in.json" for 127.0.0.1 at 2015-11-19 22:50:47 +0100
+Processing by Devise::SessionsController#create as JSON
+  Parameters: {"user"=>{}, "session"=>{"user"=>{}}}
+Completed 401 Unauthorized in 12ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/ingredient/list.json" for 127.0.0.1 at 2015-11-19 22:50:47 +0100
+Processing by IngredientController#list as JSON
+  [1m[35mIngredient Load (0.3ms)[0m  SELECT "ingredients".* FROM "ingredients"
+  Rendered ingredient/list.json.jbuilder (25.6ms)
+Completed 200 OK in 110ms (Views: 67.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/ingredient/list.json" for 127.0.0.1 at 2015-11-19 22:50:48 +0100
+Processing by IngredientController#list as JSON
+  [1m[36mIngredient Load (0.2ms)[0m  [1mSELECT "ingredients".* FROM "ingredients"[0m
+  Rendered ingredient/list.json.jbuilder (1.5ms)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-11-19 22:51:18 +0100
+Processing by ApplicationController#angular as HTML
+  Rendered layouts/application.html.haml within layouts/application (142.2ms)
+Completed 200 OK in 284ms (Views: 282.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-1839c6c058e3d2e9609073fef67920efbae929997da643cde5b215f15d8a2566.css?body=1" for 127.0.0.1 at 2015-11-19 22:51:19 +0100
+
+
+Started GET "/assets/angular-ui-select/dist/select.self-d19f8ee556cc34458715f73be4f976db0331358b4f8250a65aa81748e3538098.css?body=1" for 127.0.0.1 at 2015-11-19 22:51:19 +0100
+
+
+Started GET "/assets/picture.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-19 22:51:19 +0100
+
+
+Started GET "/assets/bootstrap/dist/css/bootstrap.self-c68c406b70db1115478355392ee8e55e46903052ef2acc9b83a09aa57ea2c0d1.css?body=1" for 127.0.0.1 at 2015-11-19 22:51:19 +0100
+
+
+Started GET "/assets/recipe.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-19 22:51:19 +0100
+
+
+Started GET "/assets/angular/angular.self-5657ace19fa32e4720c470d98deb20d67d0bd0221bdf5a4b447ab31e8249a65b.js?body=1" for 127.0.0.1 at 2015-11-19 22:51:19 +0100
+
+
+Started GET "/assets/ingredient.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-19 22:51:19 +0100
+
+
+Started GET "/assets/AngularDevise/lib/devise.self-6c07e7509cd409c264cbb30446bb2b1777deb021ccb3cd6ec342b16273e8f3c8.js?body=1" for 127.0.0.1 at 2015-11-19 22:51:19 +0100
+
+
+Started GET "/assets/angular-route/angular-route.self-f56298a407408f1817ca9aaedf3df5f45c47bbafb3c4f85641b8d0fd38581599.js?body=1" for 127.0.0.1 at 2015-11-19 22:51:19 +0100
+
+
+Started GET "/assets/jquery/dist/jquery.self-a4777c1acac0a74340755725342901a54ed000955bf6f5320491b8b2514c86ec.js?body=1" for 127.0.0.1 at 2015-11-19 22:51:19 +0100
+
+
+Started GET "/assets/angular-sanitize/angular-sanitize.self-0fdce2679b3ad89c5f5bba084b855137dafcb8edc10e99df8341d6bbad49b092.js?body=1" for 127.0.0.1 at 2015-11-19 22:51:19 +0100
+
+
+Started GET "/assets/select2/select2.self-985c703a688d3bd7b650e483040bb2172ac8859f365f1c65673c0b9dceeab6a3.js?body=1" for 127.0.0.1 at 2015-11-19 22:51:19 +0100
+
+
+Started GET "/assets/angular-ui-select/dist/select.self-b579bd2570259c7a5e6eb78fb025cdb5a4af0ae4b1df0592b0c15a094e54eacf.js?body=1" for 127.0.0.1 at 2015-11-19 22:51:19 +0100
+
+
+Started GET "/assets/angular-rails-templates.self-6d1fbfd35cf75f0150ca2dd5810a0282dfea4e0895d5f6c35c81d27d62369fd5.js?body=1" for 127.0.0.1 at 2015-11-19 22:51:19 +0100
+
+
+Started GET "/assets/app.self-024695f6d4a3891fe70ad86a05acd351643a9c84c1ce98119971cacf08cd5ec6.js?body=1" for 127.0.0.1 at 2015-11-19 22:51:19 +0100
+
+
+Started GET "/assets/config/routes.self-07abf96e9acfd1dd61c40b58b4e30c7345cd46cf653bdbeafc0953875c6a886c.js?body=1" for 127.0.0.1 at 2015-11-19 22:51:19 +0100
+
+
+Started GET "/assets/controllers/add/addIngredientsCtrl.self-c4ee4c78487e841fac04ed1b0fed34a4defcd23592fac599d8638e2954fc0f73.js?body=1" for 127.0.0.1 at 2015-11-19 22:51:19 +0100
+
+
+Started GET "/assets/controllers/add/addPictureCtrl.self-6e63e1d0ef853acb559ae2b2629103f909d400bf97ec2f56b05dd55b10f43990.js?body=1" for 127.0.0.1 at 2015-11-19 22:51:19 +0100
+
+
+Started GET "/assets/controllers/add/addRecipeCtrl.self-023e47ab483f9848b0ad98b5bd8e8ffb57e5d706929f3f22f778ce58acd931a4.js?body=1" for 127.0.0.1 at 2015-11-19 22:51:19 +0100
+
+
+Started GET "/assets/controllers/auth/authCtrl.self-be016db96ff4b861a6e48e6915edfdde5b5be66b64c844ba5fe8161377314aef.js?body=1" for 127.0.0.1 at 2015-11-19 22:51:19 +0100
+
+
+Started GET "/assets/controllers/home/home.self-5ba9f6101ec458be203c7404b68cfade4693142c1f4d6acd0d27dac559274557.js?body=1" for 127.0.0.1 at 2015-11-19 22:51:19 +0100
+
+
+Started GET "/assets/controllers/nav/navCtrl.self-d962987da269ccf5ec142b70643d71dd7270f075be122f426f382715460c9d4a.js?body=1" for 127.0.0.1 at 2015-11-19 22:51:19 +0100
+
+
+Started GET "/assets/ingredient.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-19 22:51:19 +0100
+
+
+Started GET "/assets/picture.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-19 22:51:19 +0100
+
+
+Started GET "/assets/recipe.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-19 22:51:19 +0100
+
+
+Started GET "/assets/application.self-5c210454b1facc1e317a759f6059324f793841eb23d1f549179b64d1584c55f8.js?body=1" for 127.0.0.1 at 2015-11-19 22:51:19 +0100
+
+
+Started GET "/assets/templates/layouts/nav/_nav.html" for 127.0.0.1 at 2015-11-19 22:51:19 +0100
+
+
+Started GET "/assets/templates/add/add-ingredients.html" for 127.0.0.1 at 2015-11-19 22:51:19 +0100
+
+
+Started POST "/users/sign_in.json" for 127.0.0.1 at 2015-11-19 22:51:19 +0100
+Processing by Devise::SessionsController#create as JSON
+  Parameters: {"user"=>{}, "session"=>{"user"=>{}}}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/ingredient/list.json" for 127.0.0.1 at 2015-11-19 22:51:19 +0100
+Processing by IngredientController#list as JSON
+  [1m[35mIngredient Load (0.2ms)[0m  SELECT "ingredients".* FROM "ingredients"
+  Rendered ingredient/list.json.jbuilder (0.8ms)
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/ingredient/list.json" for 127.0.0.1 at 2015-11-19 22:51:19 +0100
+Processing by IngredientController#list as JSON
+  [1m[36mIngredient Load (0.2ms)[0m  [1mSELECT "ingredients".* FROM "ingredients"[0m
+  Rendered ingredient/list.json.jbuilder (1.0ms)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-11-19 22:51:31 +0100
+Processing by ApplicationController#angular as HTML
+  Rendered layouts/application.html.haml within layouts/application (114.8ms)
+Completed 200 OK in 204ms (Views: 203.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap/dist/css/bootstrap.self-c68c406b70db1115478355392ee8e55e46903052ef2acc9b83a09aa57ea2c0d1.css?body=1" for 127.0.0.1 at 2015-11-19 22:51:32 +0100
+
+
+Started GET "/assets/application.self-d0bf033c1203a1588ab7164f7b9f6fd0f03603aa66cffb9a8464407a29d2a6f0.css?body=1" for 127.0.0.1 at 2015-11-19 22:51:32 +0100
+
+
+Started GET "/assets/recipe.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-19 22:51:32 +0100
+
+
+Started GET "/assets/ingredient.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-19 22:51:32 +0100
+
+
+Started GET "/assets/picture.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-19 22:51:32 +0100
+
+
+Started GET "/assets/angular-ui-select/dist/select.self-d19f8ee556cc34458715f73be4f976db0331358b4f8250a65aa81748e3538098.css?body=1" for 127.0.0.1 at 2015-11-19 22:51:32 +0100
+
+
+Started GET "/assets/angular/angular.self-5657ace19fa32e4720c470d98deb20d67d0bd0221bdf5a4b447ab31e8249a65b.js?body=1" for 127.0.0.1 at 2015-11-19 22:51:32 +0100
+
+
+Started GET "/assets/AngularDevise/lib/devise.self-6c07e7509cd409c264cbb30446bb2b1777deb021ccb3cd6ec342b16273e8f3c8.js?body=1" for 127.0.0.1 at 2015-11-19 22:51:32 +0100
+
+
+Started GET "/assets/angular-route/angular-route.self-f56298a407408f1817ca9aaedf3df5f45c47bbafb3c4f85641b8d0fd38581599.js?body=1" for 127.0.0.1 at 2015-11-19 22:51:32 +0100
+
+
+Started GET "/assets/jquery/dist/jquery.self-a4777c1acac0a74340755725342901a54ed000955bf6f5320491b8b2514c86ec.js?body=1" for 127.0.0.1 at 2015-11-19 22:51:32 +0100
+
+
+Started GET "/assets/angular-sanitize/angular-sanitize.self-0fdce2679b3ad89c5f5bba084b855137dafcb8edc10e99df8341d6bbad49b092.js?body=1" for 127.0.0.1 at 2015-11-19 22:51:32 +0100
+
+
+Started GET "/assets/select2/select2.self-985c703a688d3bd7b650e483040bb2172ac8859f365f1c65673c0b9dceeab6a3.js?body=1" for 127.0.0.1 at 2015-11-19 22:51:32 +0100
+
+
+Started GET "/assets/angular-ui-select/dist/select.self-b579bd2570259c7a5e6eb78fb025cdb5a4af0ae4b1df0592b0c15a094e54eacf.js?body=1" for 127.0.0.1 at 2015-11-19 22:51:32 +0100
+
+
+Started GET "/assets/angular-rails-templates.self-6d1fbfd35cf75f0150ca2dd5810a0282dfea4e0895d5f6c35c81d27d62369fd5.js?body=1" for 127.0.0.1 at 2015-11-19 22:51:32 +0100
+
+
+Started GET "/assets/app.self-024695f6d4a3891fe70ad86a05acd351643a9c84c1ce98119971cacf08cd5ec6.js?body=1" for 127.0.0.1 at 2015-11-19 22:51:32 +0100
+
+
+Started GET "/assets/config/routes.self-07abf96e9acfd1dd61c40b58b4e30c7345cd46cf653bdbeafc0953875c6a886c.js?body=1" for 127.0.0.1 at 2015-11-19 22:51:32 +0100
+
+
+Started GET "/assets/controllers/add/addIngredientsCtrl.self-c4ee4c78487e841fac04ed1b0fed34a4defcd23592fac599d8638e2954fc0f73.js?body=1" for 127.0.0.1 at 2015-11-19 22:51:32 +0100
+
+
+Started GET "/assets/controllers/add/addPictureCtrl.self-6e63e1d0ef853acb559ae2b2629103f909d400bf97ec2f56b05dd55b10f43990.js?body=1" for 127.0.0.1 at 2015-11-19 22:51:32 +0100
+
+
+Started GET "/assets/controllers/add/addRecipeCtrl.self-023e47ab483f9848b0ad98b5bd8e8ffb57e5d706929f3f22f778ce58acd931a4.js?body=1" for 127.0.0.1 at 2015-11-19 22:51:32 +0100
+
+
+Started GET "/assets/controllers/auth/authCtrl.self-be016db96ff4b861a6e48e6915edfdde5b5be66b64c844ba5fe8161377314aef.js?body=1" for 127.0.0.1 at 2015-11-19 22:51:32 +0100
+
+
+Started GET "/assets/controllers/home/home.self-5ba9f6101ec458be203c7404b68cfade4693142c1f4d6acd0d27dac559274557.js?body=1" for 127.0.0.1 at 2015-11-19 22:51:32 +0100
+
+
+Started GET "/assets/controllers/nav/navCtrl.self-d962987da269ccf5ec142b70643d71dd7270f075be122f426f382715460c9d4a.js?body=1" for 127.0.0.1 at 2015-11-19 22:51:32 +0100
+
+
+Started GET "/assets/ingredient.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-19 22:51:32 +0100
+
+
+Started GET "/assets/picture.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-19 22:51:32 +0100
+
+
+Started GET "/assets/recipe.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-19 22:51:32 +0100
+
+
+Started GET "/assets/application.self-5c210454b1facc1e317a759f6059324f793841eb23d1f549179b64d1584c55f8.js?body=1" for 127.0.0.1 at 2015-11-19 22:51:32 +0100
+
+
+Started GET "/assets/templates/add/add-ingredients.html" for 127.0.0.1 at 2015-11-19 22:51:32 +0100
+
+
+Started GET "/assets/templates/layouts/nav/_nav.html" for 127.0.0.1 at 2015-11-19 22:51:32 +0100
+
+
+Started GET "/ingredient/list.json" for 127.0.0.1 at 2015-11-19 22:51:32 +0100
+Processing by IngredientController#list as JSON
+  [1m[35mIngredient Load (0.2ms)[0m  SELECT "ingredients".* FROM "ingredients"
+  Rendered ingredient/list.json.jbuilder (1.0ms)
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/ingredient/list.json" for 127.0.0.1 at 2015-11-19 22:51:32 +0100
+Processing by IngredientController#list as JSON
+  [1m[36mIngredient Load (0.2ms)[0m  [1mSELECT "ingredients".* FROM "ingredients"[0m
+  Rendered ingredient/list.json.jbuilder (0.9ms)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/users/sign_in.json" for 127.0.0.1 at 2015-11-19 22:51:32 +0100
+Processing by Devise::SessionsController#create as JSON
+  Parameters: {"user"=>{}, "session"=>{"user"=>{}}}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-11-19 22:57:46 +0100
+Processing by ApplicationController#angular as HTML
+  Rendered layouts/application.html.haml within layouts/application (114.9ms)
+Completed 200 OK in 208ms (Views: 206.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/angular-ui-select/dist/select.self-d19f8ee556cc34458715f73be4f976db0331358b4f8250a65aa81748e3538098.css?body=1" for 127.0.0.1 at 2015-11-19 22:57:46 +0100
+
+
+Started GET "/assets/recipe.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-19 22:57:46 +0100
+
+
+Started GET "/assets/picture.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-19 22:57:46 +0100
+
+
+Started GET "/assets/application.self-d0bf033c1203a1588ab7164f7b9f6fd0f03603aa66cffb9a8464407a29d2a6f0.css?body=1" for 127.0.0.1 at 2015-11-19 22:57:46 +0100
+
+
+Started GET "/assets/ingredient.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-19 22:57:46 +0100
+
+
+Started GET "/assets/bootstrap/dist/css/bootstrap.self-c68c406b70db1115478355392ee8e55e46903052ef2acc9b83a09aa57ea2c0d1.css?body=1" for 127.0.0.1 at 2015-11-19 22:57:46 +0100
+
+
+Started GET "/assets/angular/angular.self-5657ace19fa32e4720c470d98deb20d67d0bd0221bdf5a4b447ab31e8249a65b.js?body=1" for 127.0.0.1 at 2015-11-19 22:57:46 +0100
+
+
+Started GET "/assets/AngularDevise/lib/devise.self-6c07e7509cd409c264cbb30446bb2b1777deb021ccb3cd6ec342b16273e8f3c8.js?body=1" for 127.0.0.1 at 2015-11-19 22:57:46 +0100
+
+
+Started GET "/assets/angular-route/angular-route.self-f56298a407408f1817ca9aaedf3df5f45c47bbafb3c4f85641b8d0fd38581599.js?body=1" for 127.0.0.1 at 2015-11-19 22:57:46 +0100
+
+
+Started GET "/assets/jquery/dist/jquery.self-a4777c1acac0a74340755725342901a54ed000955bf6f5320491b8b2514c86ec.js?body=1" for 127.0.0.1 at 2015-11-19 22:57:46 +0100
+
+
+Started GET "/assets/angular-sanitize/angular-sanitize.self-0fdce2679b3ad89c5f5bba084b855137dafcb8edc10e99df8341d6bbad49b092.js?body=1" for 127.0.0.1 at 2015-11-19 22:57:46 +0100
+
+
+Started GET "/assets/select2/select2.self-985c703a688d3bd7b650e483040bb2172ac8859f365f1c65673c0b9dceeab6a3.js?body=1" for 127.0.0.1 at 2015-11-19 22:57:46 +0100
+
+
+Started GET "/assets/angular-ui-select/dist/select.self-b579bd2570259c7a5e6eb78fb025cdb5a4af0ae4b1df0592b0c15a094e54eacf.js?body=1" for 127.0.0.1 at 2015-11-19 22:57:46 +0100
+
+
+Started GET "/assets/angular-rails-templates.self-6d1fbfd35cf75f0150ca2dd5810a0282dfea4e0895d5f6c35c81d27d62369fd5.js?body=1" for 127.0.0.1 at 2015-11-19 22:57:46 +0100
+
+
+Started GET "/assets/app.self-024695f6d4a3891fe70ad86a05acd351643a9c84c1ce98119971cacf08cd5ec6.js?body=1" for 127.0.0.1 at 2015-11-19 22:57:46 +0100
+
+
+Started GET "/assets/config/routes.self-07abf96e9acfd1dd61c40b58b4e30c7345cd46cf653bdbeafc0953875c6a886c.js?body=1" for 127.0.0.1 at 2015-11-19 22:57:46 +0100
+
+
+Started GET "/assets/controllers/add/addIngredientsCtrl.self-c4ee4c78487e841fac04ed1b0fed34a4defcd23592fac599d8638e2954fc0f73.js?body=1" for 127.0.0.1 at 2015-11-19 22:57:46 +0100
+
+
+Started GET "/assets/controllers/add/addPictureCtrl.self-6e63e1d0ef853acb559ae2b2629103f909d400bf97ec2f56b05dd55b10f43990.js?body=1" for 127.0.0.1 at 2015-11-19 22:57:46 +0100
+
+
+Started GET "/assets/controllers/add/addRecipeCtrl.self-023e47ab483f9848b0ad98b5bd8e8ffb57e5d706929f3f22f778ce58acd931a4.js?body=1" for 127.0.0.1 at 2015-11-19 22:57:46 +0100
+
+
+Started GET "/assets/controllers/auth/authCtrl.self-be016db96ff4b861a6e48e6915edfdde5b5be66b64c844ba5fe8161377314aef.js?body=1" for 127.0.0.1 at 2015-11-19 22:57:46 +0100
+
+
+Started GET "/assets/controllers/home/home.self-5ba9f6101ec458be203c7404b68cfade4693142c1f4d6acd0d27dac559274557.js?body=1" for 127.0.0.1 at 2015-11-19 22:57:46 +0100
+
+
+Started GET "/assets/controllers/nav/navCtrl.self-d962987da269ccf5ec142b70643d71dd7270f075be122f426f382715460c9d4a.js?body=1" for 127.0.0.1 at 2015-11-19 22:57:46 +0100
+
+
+Started GET "/assets/ingredient.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-19 22:57:46 +0100
+
+
+Started GET "/assets/picture.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-19 22:57:46 +0100
+
+
+Started GET "/assets/recipe.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-19 22:57:46 +0100
+
+
+Started GET "/assets/application.self-5c210454b1facc1e317a759f6059324f793841eb23d1f549179b64d1584c55f8.js?body=1" for 127.0.0.1 at 2015-11-19 22:57:46 +0100
+
+
+Started GET "/assets/templates/layouts/nav/_nav.html" for 127.0.0.1 at 2015-11-19 22:57:46 +0100
+
+
+Started GET "/assets/templates/add/add-ingredients.html" for 127.0.0.1 at 2015-11-19 22:57:46 +0100
+
+SyntaxError (/home/mokhles/recette_social_network/app/assets/javascripts/templates/add/add-ingredients.html.haml:4: syntax error, unexpected ',', expecting =>
+...t_search_input:"false",tagging, tagging_label:"(custom 'new'...
+...                               ^
+/home/mokhles/recette_social_network/app/assets/javascripts/templates/add/add-ingredients.html.haml:4: syntax error, unexpected ')', expecting tSTRING_DEND
+...g_label:"(custom 'new' label)")}>\n    <ui_select_match#{_ha...
+...                               ^
+/home/mokhles/recette_social_network/app/assets/javascripts/templates/add/add-ingredients.html.haml:5: syntax error, unexpected tSTRING_DEND, expecting '}'
+_hamlout.attributes({}, nil,  placeholder:"Enter in...
+                      ^
+/home/mokhles/recette_social_network/app/assets/javascripts/templates/add/add-ingredients.html.haml:5: Can't assign to nil
+_hamlout.attributes({}, nil,  placeholder:"Enter ingredie...
+                            ^
+/home/mokhles/recette_social_network/app/assets/javascripts/templates/add/add-ingredients.html.haml:5: syntax error, unexpected ')', expecting tSTRING_DEND
+...er:"Enter ingredient name ...")}>{{ $select.selected.title }...
+...                               ^
+/home/mokhles/recette_social_network/app/assets/javascripts/templates/add/add-ingredients.html.haml:5: syntax error, unexpected tSTRING_DEND, expecting =>
+...")}>{{ $select.selected.title }}</ui_select_match>\n    <ui_...
+...                               ^
+/home/mokhles/recette_social_network/app/assets/javascripts/templates/add/add-ingredients.html.haml:7: unknown regexp options - dv
+/home/mokhles/recette_social_network/app/assets/javascripts/templates/add/add-ingredients.html.haml:7: syntax error, unexpected $undefined
+...l: "ingredient.title")}></div>\n    </ui_select_choices>\n  ...
+...                               ^
+/home/mokhles/recette_social_network/app/assets/javascripts/templates/add/add-ingredients.html.haml:7: syntax error, unexpected tIDENTIFIER, expecting tSTRING_DEND
+..._select_choices>\n  </ui_select>\n  <button#{_hamlout.adjust...
+...                               ^
+/home/mokhles/recette_social_network/app/assets/javascripts/templates/add/add-ingredients.html.haml:8: syntax error, unexpected '}', expecting tSTRING_DEND
+...ick: "addAnotherIngredient()")}>Add another</button>\n  <but...
+...                               ^
+/home/mokhles/recette_social_network/app/assets/javascripts/templates/add/add-ingredients.html.haml:9: unknown regexp options - btt
+/home/mokhles/recette_social_network/app/assets/javascripts/templates/add/add-ingredients.html.haml:9: syntax error, unexpected $undefined
+...gPictures()")}>Finish</button>\n</div>\n", -1, false);
+...                               ^
+/home/mokhles/recette_social_network/app/assets/javascripts/templates/add/add-ingredients.html.haml:9: unterminated regexp meets end of file
+/home/mokhles/recette_social_network/app/assets/javascripts/templates/add/add-ingredients.html.haml:9: syntax error, unexpected end-of-input, expecting tSTRING_DEND
+end;end;end;end
+               ^):
+  app/assets/javascripts/templates/add/add-ingredients.html.haml:4: syntax error, unexpected ',', expecting =>
+  app/assets/javascripts/templates/add/add-ingredients.html.haml:4: syntax error, unexpected ')', expecting tSTRING_DEND
+  app/assets/javascripts/templates/add/add-ingredients.html.haml:5: syntax error, unexpected tSTRING_DEND, expecting '}'
+  app/assets/javascripts/templates/add/add-ingredients.html.haml:5: Can't assign to nil
+  app/assets/javascripts/templates/add/add-ingredients.html.haml:5: syntax error, unexpected ')', expecting tSTRING_DEND
+  app/assets/javascripts/templates/add/add-ingredients.html.haml:5: syntax error, unexpected tSTRING_DEND, expecting =>
+  app/assets/javascripts/templates/add/add-ingredients.html.haml:7: unknown regexp options - dv
+  app/assets/javascripts/templates/add/add-ingredients.html.haml:7: syntax error, unexpected $undefined
+  app/assets/javascripts/templates/add/add-ingredients.html.haml:7: syntax error, unexpected tIDENTIFIER, expecting tSTRING_DEND
+  app/assets/javascripts/templates/add/add-ingredients.html.haml:8: syntax error, unexpected '}', expecting tSTRING_DEND
+  app/assets/javascripts/templates/add/add-ingredients.html.haml:9: unknown regexp options - btt
+  app/assets/javascripts/templates/add/add-ingredients.html.haml:9: syntax error, unexpected $undefined
+  app/assets/javascripts/templates/add/add-ingredients.html.haml:9: unterminated regexp meets end of file
+  app/assets/javascripts/templates/add/add-ingredients.html.haml:9: syntax error, unexpected end-of-input, expecting tSTRING_DEND
+
+
+  Rendered /home/mokhles/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.7ms)
+  Rendered /home/mokhles/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /home/mokhles/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/mokhles/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (28.6ms)
+  Rendered /home/mokhles/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/mokhles/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/mokhles/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/mokhles/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/mokhles/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (21.9ms)
+  Rendered /home/mokhles/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/mokhles/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/mokhles/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (47.2ms)
+
+
+Started POST "/users/sign_in.json" for 127.0.0.1 at 2015-11-19 22:57:46 +0100
+Processing by Devise::SessionsController#create as JSON
+  Parameters: {"user"=>{}, "session"=>{"user"=>{}}}
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-11-19 22:57:54 +0100
+Processing by ApplicationController#angular as HTML
+  Rendered layouts/application.html.haml within layouts/application (81.4ms)
+Completed 200 OK in 167ms (Views: 165.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap/dist/css/bootstrap.self-c68c406b70db1115478355392ee8e55e46903052ef2acc9b83a09aa57ea2c0d1.css?body=1" for 127.0.0.1 at 2015-11-19 22:57:54 +0100
+
+
+Started GET "/assets/recipe.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-19 22:57:54 +0100
+
+
+Started GET "/assets/picture.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-19 22:57:54 +0100
+
+
+Started GET "/assets/ingredient.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-19 22:57:54 +0100
+
+
+Started GET "/assets/angular-ui-select/dist/select.self-d19f8ee556cc34458715f73be4f976db0331358b4f8250a65aa81748e3538098.css?body=1" for 127.0.0.1 at 2015-11-19 22:57:54 +0100
+
+
+Started GET "/assets/application.self-d0bf033c1203a1588ab7164f7b9f6fd0f03603aa66cffb9a8464407a29d2a6f0.css?body=1" for 127.0.0.1 at 2015-11-19 22:57:54 +0100
+
+
+Started GET "/assets/jquery/dist/jquery.self-a4777c1acac0a74340755725342901a54ed000955bf6f5320491b8b2514c86ec.js?body=1" for 127.0.0.1 at 2015-11-19 22:57:54 +0100
+
+
+Started GET "/assets/angular/angular.self-5657ace19fa32e4720c470d98deb20d67d0bd0221bdf5a4b447ab31e8249a65b.js?body=1" for 127.0.0.1 at 2015-11-19 22:57:54 +0100
+
+
+Started GET "/assets/AngularDevise/lib/devise.self-6c07e7509cd409c264cbb30446bb2b1777deb021ccb3cd6ec342b16273e8f3c8.js?body=1" for 127.0.0.1 at 2015-11-19 22:57:54 +0100
+
+
+Started GET "/assets/angular-route/angular-route.self-f56298a407408f1817ca9aaedf3df5f45c47bbafb3c4f85641b8d0fd38581599.js?body=1" for 127.0.0.1 at 2015-11-19 22:57:54 +0100
+
+
+Started GET "/assets/angular-ui-select/dist/select.self-b579bd2570259c7a5e6eb78fb025cdb5a4af0ae4b1df0592b0c15a094e54eacf.js?body=1" for 127.0.0.1 at 2015-11-19 22:57:54 +0100
+
+
+Started GET "/assets/angular-sanitize/angular-sanitize.self-0fdce2679b3ad89c5f5bba084b855137dafcb8edc10e99df8341d6bbad49b092.js?body=1" for 127.0.0.1 at 2015-11-19 22:57:54 +0100
+
+
+Started GET "/assets/select2/select2.self-985c703a688d3bd7b650e483040bb2172ac8859f365f1c65673c0b9dceeab6a3.js?body=1" for 127.0.0.1 at 2015-11-19 22:57:54 +0100
+
+
+Started GET "/assets/app.self-024695f6d4a3891fe70ad86a05acd351643a9c84c1ce98119971cacf08cd5ec6.js?body=1" for 127.0.0.1 at 2015-11-19 22:57:54 +0100
+
+
+Started GET "/assets/angular-rails-templates.self-6d1fbfd35cf75f0150ca2dd5810a0282dfea4e0895d5f6c35c81d27d62369fd5.js?body=1" for 127.0.0.1 at 2015-11-19 22:57:54 +0100
+
+
+Started GET "/assets/config/routes.self-07abf96e9acfd1dd61c40b58b4e30c7345cd46cf653bdbeafc0953875c6a886c.js?body=1" for 127.0.0.1 at 2015-11-19 22:57:54 +0100
+
+
+Started GET "/assets/controllers/add/addIngredientsCtrl.self-c4ee4c78487e841fac04ed1b0fed34a4defcd23592fac599d8638e2954fc0f73.js?body=1" for 127.0.0.1 at 2015-11-19 22:57:54 +0100
+
+
+Started GET "/assets/controllers/add/addPictureCtrl.self-6e63e1d0ef853acb559ae2b2629103f909d400bf97ec2f56b05dd55b10f43990.js?body=1" for 127.0.0.1 at 2015-11-19 22:57:54 +0100
+
+
+Started GET "/assets/controllers/add/addRecipeCtrl.self-023e47ab483f9848b0ad98b5bd8e8ffb57e5d706929f3f22f778ce58acd931a4.js?body=1" for 127.0.0.1 at 2015-11-19 22:57:54 +0100
+
+
+Started GET "/assets/controllers/auth/authCtrl.self-be016db96ff4b861a6e48e6915edfdde5b5be66b64c844ba5fe8161377314aef.js?body=1" for 127.0.0.1 at 2015-11-19 22:57:54 +0100
+
+
+Started GET "/assets/controllers/home/home.self-5ba9f6101ec458be203c7404b68cfade4693142c1f4d6acd0d27dac559274557.js?body=1" for 127.0.0.1 at 2015-11-19 22:57:54 +0100
+
+
+Started GET "/assets/picture.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-19 22:57:54 +0100
+
+
+Started GET "/assets/controllers/nav/navCtrl.self-d962987da269ccf5ec142b70643d71dd7270f075be122f426f382715460c9d4a.js?body=1" for 127.0.0.1 at 2015-11-19 22:57:54 +0100
+
+
+Started GET "/assets/application.self-5c210454b1facc1e317a759f6059324f793841eb23d1f549179b64d1584c55f8.js?body=1" for 127.0.0.1 at 2015-11-19 22:57:54 +0100
+
+
+Started GET "/assets/ingredient.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-19 22:57:54 +0100
+
+
+Started GET "/assets/recipe.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-19 22:57:54 +0100
+
+
+Started GET "/assets/templates/add/add-ingredients.html" for 127.0.0.1 at 2015-11-19 22:57:54 +0100
+
+
+Started GET "/assets/templates/layouts/nav/_nav.html" for 127.0.0.1 at 2015-11-19 22:57:54 +0100
+
+
+Started GET "/ingredient/list.json" for 127.0.0.1 at 2015-11-19 22:57:54 +0100
+Processing by IngredientController#list as JSON
+  [1m[35mIngredient Load (0.2ms)[0m  SELECT "ingredients".* FROM "ingredients"
+  Rendered ingredient/list.json.jbuilder (1.9ms)
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/ingredient/list.json" for 127.0.0.1 at 2015-11-19 22:57:54 +0100
+Processing by IngredientController#list as JSON
+  [1m[36mIngredient Load (0.2ms)[0m  [1mSELECT "ingredients".* FROM "ingredients"[0m
+  Rendered ingredient/list.json.jbuilder (1.3ms)
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/users/sign_in.json" for 127.0.0.1 at 2015-11-19 22:57:54 +0100
+Processing by Devise::SessionsController#create as JSON
+  Parameters: {"user"=>{}, "session"=>{"user"=>{}}}
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap/dist/css/bootstrap.css.map" for 127.0.0.1 at 2015-11-19 23:01:39 +0100
+
+
+Started GET "/" for 127.0.0.1 at 2015-11-19 23:04:00 +0100
+Processing by ApplicationController#angular as HTML
+  Rendered layouts/application.html.haml within layouts/application (85.0ms)
+Completed 200 OK in 168ms (Views: 167.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap/dist/css/bootstrap.self-c68c406b70db1115478355392ee8e55e46903052ef2acc9b83a09aa57ea2c0d1.css?body=1" for 127.0.0.1 at 2015-11-19 23:04:00 +0100
+
+
+Started GET "/assets/angular-ui-select/dist/select.self-d19f8ee556cc34458715f73be4f976db0331358b4f8250a65aa81748e3538098.css?body=1" for 127.0.0.1 at 2015-11-19 23:04:00 +0100
+
+
+Started GET "/assets/recipe.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-19 23:04:00 +0100
+
+
+Started GET "/assets/picture.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-19 23:04:00 +0100
+
+
+Started GET "/assets/ingredient.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-19 23:04:00 +0100
+
+
+Started GET "/assets/application.self-d0bf033c1203a1588ab7164f7b9f6fd0f03603aa66cffb9a8464407a29d2a6f0.css?body=1" for 127.0.0.1 at 2015-11-19 23:04:00 +0100
+
+
+Started GET "/assets/angular/angular.self-5657ace19fa32e4720c470d98deb20d67d0bd0221bdf5a4b447ab31e8249a65b.js?body=1" for 127.0.0.1 at 2015-11-19 23:04:00 +0100
+
+
+Started GET "/assets/AngularDevise/lib/devise.self-6c07e7509cd409c264cbb30446bb2b1777deb021ccb3cd6ec342b16273e8f3c8.js?body=1" for 127.0.0.1 at 2015-11-19 23:04:00 +0100
+
+
+Started GET "/assets/angular-route/angular-route.self-f56298a407408f1817ca9aaedf3df5f45c47bbafb3c4f85641b8d0fd38581599.js?body=1" for 127.0.0.1 at 2015-11-19 23:04:00 +0100
+
+
+Started GET "/assets/jquery/dist/jquery.self-a4777c1acac0a74340755725342901a54ed000955bf6f5320491b8b2514c86ec.js?body=1" for 127.0.0.1 at 2015-11-19 23:04:00 +0100
+
+
+Started GET "/assets/angular-sanitize/angular-sanitize.self-0fdce2679b3ad89c5f5bba084b855137dafcb8edc10e99df8341d6bbad49b092.js?body=1" for 127.0.0.1 at 2015-11-19 23:04:00 +0100
+
+
+Started GET "/assets/select2/select2.self-985c703a688d3bd7b650e483040bb2172ac8859f365f1c65673c0b9dceeab6a3.js?body=1" for 127.0.0.1 at 2015-11-19 23:04:00 +0100
+
+
+Started GET "/assets/angular-ui-select/dist/select.self-b579bd2570259c7a5e6eb78fb025cdb5a4af0ae4b1df0592b0c15a094e54eacf.js?body=1" for 127.0.0.1 at 2015-11-19 23:04:00 +0100
+
+
+Started GET "/assets/angular-rails-templates.self-6d1fbfd35cf75f0150ca2dd5810a0282dfea4e0895d5f6c35c81d27d62369fd5.js?body=1" for 127.0.0.1 at 2015-11-19 23:04:00 +0100
+
+
+Started GET "/assets/app.self-024695f6d4a3891fe70ad86a05acd351643a9c84c1ce98119971cacf08cd5ec6.js?body=1" for 127.0.0.1 at 2015-11-19 23:04:00 +0100
+
+
+Started GET "/assets/config/routes.self-07abf96e9acfd1dd61c40b58b4e30c7345cd46cf653bdbeafc0953875c6a886c.js?body=1" for 127.0.0.1 at 2015-11-19 23:04:00 +0100
+
+
+Started GET "/assets/controllers/add/addIngredientsCtrl.self-c4ee4c78487e841fac04ed1b0fed34a4defcd23592fac599d8638e2954fc0f73.js?body=1" for 127.0.0.1 at 2015-11-19 23:04:00 +0100
+
+
+Started GET "/assets/controllers/add/addPictureCtrl.self-6e63e1d0ef853acb559ae2b2629103f909d400bf97ec2f56b05dd55b10f43990.js?body=1" for 127.0.0.1 at 2015-11-19 23:04:00 +0100
+
+
+Started GET "/assets/controllers/add/addRecipeCtrl.self-023e47ab483f9848b0ad98b5bd8e8ffb57e5d706929f3f22f778ce58acd931a4.js?body=1" for 127.0.0.1 at 2015-11-19 23:04:00 +0100
+
+
+Started GET "/assets/controllers/auth/authCtrl.self-be016db96ff4b861a6e48e6915edfdde5b5be66b64c844ba5fe8161377314aef.js?body=1" for 127.0.0.1 at 2015-11-19 23:04:00 +0100
+
+
+Started GET "/assets/controllers/home/home.self-5ba9f6101ec458be203c7404b68cfade4693142c1f4d6acd0d27dac559274557.js?body=1" for 127.0.0.1 at 2015-11-19 23:04:00 +0100
+
+
+Started GET "/assets/controllers/nav/navCtrl.self-d962987da269ccf5ec142b70643d71dd7270f075be122f426f382715460c9d4a.js?body=1" for 127.0.0.1 at 2015-11-19 23:04:00 +0100
+
+
+Started GET "/assets/ingredient.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-19 23:04:00 +0100
+
+
+Started GET "/assets/picture.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-19 23:04:00 +0100
+
+
+Started GET "/assets/recipe.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-19 23:04:00 +0100
+
+
+Started GET "/assets/application.self-5c210454b1facc1e317a759f6059324f793841eb23d1f549179b64d1584c55f8.js?body=1" for 127.0.0.1 at 2015-11-19 23:04:00 +0100
+
+
+Started GET "/assets/bootstrap/dist/css/bootstrap.css.map" for 127.0.0.1 at 2015-11-19 23:04:00 +0100
+
+
+Started GET "/assets/templates/layouts/nav/_nav.html" for 127.0.0.1 at 2015-11-19 23:04:00 +0100
+
+
+Started GET "/assets/templates/add/add-ingredients.html" for 127.0.0.1 at 2015-11-19 23:04:00 +0100
+
+
+Started POST "/users/sign_in.json" for 127.0.0.1 at 2015-11-19 23:04:00 +0100
+Processing by Devise::SessionsController#create as JSON
+  Parameters: {"user"=>{}, "session"=>{"user"=>{}}}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/ingredient/list.json" for 127.0.0.1 at 2015-11-19 23:04:00 +0100
+Processing by IngredientController#list as JSON
+  [1m[35mIngredient Load (0.2ms)[0m  SELECT "ingredients".* FROM "ingredients"
+  Rendered ingredient/list.json.jbuilder (2.1ms)
+Completed 200 OK in 9ms (Views: 7.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/ingredient/list.json" for 127.0.0.1 at 2015-11-19 23:04:00 +0100
+Processing by IngredientController#list as JSON
+  [1m[36mIngredient Load (0.2ms)[0m  [1mSELECT "ingredients".* FROM "ingredients"[0m
+  Rendered ingredient/list.json.jbuilder (1.4ms)
+Completed 200 OK in 7ms (Views: 5.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-11-19 23:06:27 +0100
+Processing by ApplicationController#angular as HTML
+  Rendered layouts/application.html.haml within layouts/application (84.9ms)
+Completed 200 OK in 166ms (Views: 164.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap/dist/css/bootstrap.self-c68c406b70db1115478355392ee8e55e46903052ef2acc9b83a09aa57ea2c0d1.css?body=1" for 127.0.0.1 at 2015-11-19 23:06:27 +0100
+
+
+Started GET "/assets/angular-ui-select/dist/select.self-d19f8ee556cc34458715f73be4f976db0331358b4f8250a65aa81748e3538098.css?body=1" for 127.0.0.1 at 2015-11-19 23:06:27 +0100
+
+
+Started GET "/assets/ingredient.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-19 23:06:27 +0100
+
+
+Started GET "/assets/picture.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-19 23:06:27 +0100
+
+
+Started GET "/assets/angular/angular.self-5657ace19fa32e4720c470d98deb20d67d0bd0221bdf5a4b447ab31e8249a65b.js?body=1" for 127.0.0.1 at 2015-11-19 23:06:27 +0100
+
+
+Started GET "/assets/recipe.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-19 23:06:27 +0100
+
+
+Started GET "/assets/application.self-d0bf033c1203a1588ab7164f7b9f6fd0f03603aa66cffb9a8464407a29d2a6f0.css?body=1" for 127.0.0.1 at 2015-11-19 23:06:27 +0100
+
+
+Started GET "/assets/AngularDevise/lib/devise.self-6c07e7509cd409c264cbb30446bb2b1777deb021ccb3cd6ec342b16273e8f3c8.js?body=1" for 127.0.0.1 at 2015-11-19 23:06:27 +0100
+
+
+Started GET "/assets/angular-route/angular-route.self-f56298a407408f1817ca9aaedf3df5f45c47bbafb3c4f85641b8d0fd38581599.js?body=1" for 127.0.0.1 at 2015-11-19 23:06:27 +0100
+
+
+Started GET "/assets/jquery/dist/jquery.self-a4777c1acac0a74340755725342901a54ed000955bf6f5320491b8b2514c86ec.js?body=1" for 127.0.0.1 at 2015-11-19 23:06:27 +0100
+
+
+Started GET "/assets/angular-sanitize/angular-sanitize.self-0fdce2679b3ad89c5f5bba084b855137dafcb8edc10e99df8341d6bbad49b092.js?body=1" for 127.0.0.1 at 2015-11-19 23:06:27 +0100
+
+
+Started GET "/assets/select2/select2.self-985c703a688d3bd7b650e483040bb2172ac8859f365f1c65673c0b9dceeab6a3.js?body=1" for 127.0.0.1 at 2015-11-19 23:06:27 +0100
+
+
+Started GET "/assets/angular-ui-select/dist/select.self-b579bd2570259c7a5e6eb78fb025cdb5a4af0ae4b1df0592b0c15a094e54eacf.js?body=1" for 127.0.0.1 at 2015-11-19 23:06:27 +0100
+
+
+Started GET "/assets/angular-rails-templates.self-6d1fbfd35cf75f0150ca2dd5810a0282dfea4e0895d5f6c35c81d27d62369fd5.js?body=1" for 127.0.0.1 at 2015-11-19 23:06:27 +0100
+
+
+Started GET "/assets/app.self-024695f6d4a3891fe70ad86a05acd351643a9c84c1ce98119971cacf08cd5ec6.js?body=1" for 127.0.0.1 at 2015-11-19 23:06:27 +0100
+
+
+Started GET "/assets/config/routes.self-07abf96e9acfd1dd61c40b58b4e30c7345cd46cf653bdbeafc0953875c6a886c.js?body=1" for 127.0.0.1 at 2015-11-19 23:06:27 +0100
+
+
+Started GET "/assets/controllers/add/addIngredientsCtrl.self-c4ee4c78487e841fac04ed1b0fed34a4defcd23592fac599d8638e2954fc0f73.js?body=1" for 127.0.0.1 at 2015-11-19 23:06:27 +0100
+
+
+Started GET "/assets/controllers/add/addPictureCtrl.self-6e63e1d0ef853acb559ae2b2629103f909d400bf97ec2f56b05dd55b10f43990.js?body=1" for 127.0.0.1 at 2015-11-19 23:06:27 +0100
+
+
+Started GET "/assets/controllers/add/addRecipeCtrl.self-023e47ab483f9848b0ad98b5bd8e8ffb57e5d706929f3f22f778ce58acd931a4.js?body=1" for 127.0.0.1 at 2015-11-19 23:06:27 +0100
+
+
+Started GET "/assets/controllers/auth/authCtrl.self-be016db96ff4b861a6e48e6915edfdde5b5be66b64c844ba5fe8161377314aef.js?body=1" for 127.0.0.1 at 2015-11-19 23:06:27 +0100
+
+
+Started GET "/assets/controllers/home/home.self-5ba9f6101ec458be203c7404b68cfade4693142c1f4d6acd0d27dac559274557.js?body=1" for 127.0.0.1 at 2015-11-19 23:06:27 +0100
+
+
+Started GET "/assets/controllers/nav/navCtrl.self-d962987da269ccf5ec142b70643d71dd7270f075be122f426f382715460c9d4a.js?body=1" for 127.0.0.1 at 2015-11-19 23:06:27 +0100
+
+
+Started GET "/assets/ingredient.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-19 23:06:27 +0100
+
+
+Started GET "/assets/picture.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-19 23:06:27 +0100
+
+
+Started GET "/assets/recipe.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-19 23:06:27 +0100
+
+
+Started GET "/assets/application.self-5c210454b1facc1e317a759f6059324f793841eb23d1f549179b64d1584c55f8.js?body=1" for 127.0.0.1 at 2015-11-19 23:06:27 +0100
+
+
+Started GET "/assets/bootstrap/dist/css/bootstrap.css.map" for 127.0.0.1 at 2015-11-19 23:06:27 +0100
+
+
+Started GET "/assets/templates/layouts/nav/_nav.html" for 127.0.0.1 at 2015-11-19 23:06:27 +0100
+
+
+Started GET "/assets/templates/add/add-ingredients.html" for 127.0.0.1 at 2015-11-19 23:06:27 +0100
+
+
+Started POST "/users/sign_in.json" for 127.0.0.1 at 2015-11-19 23:06:27 +0100
+Processing by Devise::SessionsController#create as JSON
+  Parameters: {"user"=>{}, "session"=>{"user"=>{}}}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/ingredient/list.json" for 127.0.0.1 at 2015-11-19 23:06:28 +0100
+Processing by IngredientController#list as JSON
+  [1m[35mIngredient Load (0.2ms)[0m  SELECT "ingredients".* FROM "ingredients"
+  Rendered ingredient/list.json.jbuilder (1.1ms)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/ingredient/list.json" for 127.0.0.1 at 2015-11-19 23:06:28 +0100
+Processing by IngredientController#list as JSON
+  [1m[36mIngredient Load (0.2ms)[0m  [1mSELECT "ingredients".* FROM "ingredients"[0m
+  Rendered ingredient/list.json.jbuilder (1.0ms)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.2ms)

@@ -1,4 +1,6 @@
 .home-container{ ng_controller: 'addPictureCtrl' }
+  %h1.formTitle
+    Add pictures
   %form
     %input.form-control{ placeholder: "title", ng_model: "pictureTitle"}
     %br
@@ -8,5 +10,5 @@
     %br
     %button.btn{ ng_click: "addPicture()" }
       add another
-    %button.btn{ ng_click: "finishAddingPictures()" }
+    %button.btn.finishBtn{ ng_click: "finishAddingPictures()" }
       finish
