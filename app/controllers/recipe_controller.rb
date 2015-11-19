@@ -36,4 +36,10 @@ class RecipeController < ApplicationController
 			@success = false
 		end
 	end
+
+	def  recipelist
+		@recipeslist=Recipe.all
+		@ingredientslist=Ingredient.all
+		@pictureslist=Picture.all 
+	end
 end

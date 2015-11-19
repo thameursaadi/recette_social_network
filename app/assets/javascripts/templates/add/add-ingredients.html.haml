@@ -5,5 +5,4 @@
     %ui_select_match{ placeholder:"Enter ingredient name ..."} {{ $select.selected.title }}
     %ui_select_choices{ repeat: "ingredient in ingredients" }
       %div{ ng_bind_html: "ingredient.title"}
-  %button.btn{ ng_click: "addAnotherIngredient()"} Add another
-  %button.btn.finishBtn{ ng_click: "finishAddingPictures()"} Finish
+  %button.btn{ ng_click: "addIngredient()"} Add

@@ -5,9 +5,23 @@
     $scope.ingredients = data
     console.log(data)
   $scope.ingredient = {}
-  $scope.addAnotherIngredient = ->
-    reqPush = $http.post "http://localhost:3000/recipe/"+$routeParams.id+"/ingredient/add.json", { ingredient_id: $scope.ingredient.selected.id}
-    reqPush.success (data) ->
-      alert("ok")
-  $scope.finish = ->
-    $location.path("/showRecipe/"+$routeParams.id)
+
+  $scope.tagTransform = (newTag) ->
+    item = {
+      title: newTag,
+    }
+    return item
+
+  $scope.addIngredient = ->
+    $.each $scope.ingredient.selected, (i,ing) ->
+      if typeof ing.id == 'undefined'
+        reqPush = $http.post "http://localhost:3000/ingredient/add.json", { title: ing.title}
+        reqPush.success (data) ->
+          ing.id = data.id
+          reqPush = $http.post "http://localhost:3000/recipe/"+$routeParams.id+"/ingredient/add.json", { ingredient_id: ing.id}
+          reqPush.success (data) ->
+      else
+        reqPush = $http.post "http://localhost:3000/recipe/"+$routeParams.id+"/ingredient/add.json", { ingredient_id: ing.id}
+        reqPush.success (data) ->              
+
+    

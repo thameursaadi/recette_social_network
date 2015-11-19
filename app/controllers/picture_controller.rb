@@ -14,4 +14,5 @@ class PictureController < ApplicationController
 			@success = false
 		end
 	end
+	
 end
