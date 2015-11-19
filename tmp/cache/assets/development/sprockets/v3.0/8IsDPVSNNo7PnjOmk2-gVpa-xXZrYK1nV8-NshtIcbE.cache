@@ -1,0 +1,5 @@
+I"ê(function() {
+  this.cooking = angular.module('cookingRecipes', ['Devise', 'ngRoute', 'templates', 'ui-select', 'ngSanitize']);
+
+}).call(this);
+:ET

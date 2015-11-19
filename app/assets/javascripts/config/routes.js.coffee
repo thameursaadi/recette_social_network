@@ -15,14 +15,14 @@
 
   .when "/addRecipe",
     controller:  'addRecipeCtrl'
-    templateUrl: 'assets/templates/home/add-recipe.html'
+    templateUrl: 'assets/templates/add/add-recipe.html'
 
   .when "/addPictures/:id",
     controller:  'addPictureCtrl'
-    templateUrl: 'assets/templates/home/add-pictures.html'
+    templateUrl: 'assets/templates/add/add-pictures.html'
 
   .when "/addIngredients/:id",
     controller:  'addIngredientsCtrl'
-    templateUrl: 'assets/templates/home/add-ingredients.html'
+    templateUrl: 'assets/templates/add/add-ingredients.html'
 
   .otherwise redirectTo: "/home"

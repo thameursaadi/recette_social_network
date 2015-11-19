@@ -1,0 +1,7 @@
+{:uriI"”file://app/assets/javascripts/templates/home/add-ingredients.html?type=text/html&id=731045f49835381f974332a28630543d6b48b31d46160ce33c4c56bc72cddfce:ET:load_pathI"app/assets/javascripts;T:filenameI"?app/assets/javascripts/templates/home/add-ingredients.html;T:	nameI"#templates/home/add-ingredients;T:logical_pathI"(templates/home/add-ingredients.html;T:content_typeI"text/html;T:sourceI"Š<ui-select>
+    <ui-select-choices repeat="ingredient in ingredients">
+      <div ng-bind-html= "ingredient.title"></div>
+    </ui-select>;T:metadata{	:dependencieso:Set:
+@hash{	I"environment-version;TTI"environment-paths;TTI"2processors:type=text/html&file_type=text/html;TTI"Mfile-digest://app/assets/javascripts/templates/home/add-ingredients.html;TT:charsetI"
+utf-8;F:digest"%ùRÎÅHÓ@¤°¢"ðÎÊW¶ †ìØ/›t/Ò :lengthiŠ:dependencies_digest"%A³Ù`’À»ÉñCTÓ×íO>9¼ðÌ[€s¢k=ëáš:idI"E731045f49835381f974332a28630543d6b48b31d46160ce33c4c56bc72cddfce;F:
+mtimel+æMV

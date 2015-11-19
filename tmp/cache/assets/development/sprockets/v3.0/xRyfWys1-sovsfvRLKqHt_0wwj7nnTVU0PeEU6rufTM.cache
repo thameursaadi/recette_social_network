@@ -1,0 +1,11 @@
+I"+(function() {
+  this.cooking.controller('addPictureCtrl', function($scope, $http, $location, $routeParams) {
+    var req;
+    req = $http.get("http://localhost:3000/ingredient/list.json");
+    return req.success(function(data) {
+      return $scope.ingredients = data;
+    });
+  });
+
+}).call(this);
+:ET

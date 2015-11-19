@@ -1,0 +1,23 @@
+I"Á(function() {
+  this.cooking.controller('addIngredientsCtrl', function($scope, $http, $location, $routeParams) {
+    var req;
+    req = $http.get("http://localhost:3000/ingredient/list.json");
+    $scope.ingredients = [];
+    req.success(function(data) {
+      $scope.ingredients = data;
+      return console.log(data);
+    });
+    $scope.ingredient = {};
+    return $scope.addAnotherIngredient = function() {
+      var reqPush;
+      reqPush = $http.post("http://localhost:3000/recipe/" + $routeParams.id + "/ingredient/add", {
+        ingredient_id: $scope.ingredient.selected.id
+      });
+      return reqPush.success(function(data) {
+        return alert("ok");
+      });
+    };
+  });
+
+}).call(this);
+:ET

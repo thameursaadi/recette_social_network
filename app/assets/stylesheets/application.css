@@ -11,5 +11,7 @@
  * file per style scope.
  *
  *= require bootstrap/dist/css/bootstrap
+ *= require angular-ui-select/dist/select
  *= require_tree .
+
 */
