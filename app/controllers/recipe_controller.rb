@@ -39,7 +39,5 @@ class RecipeController < ApplicationController
 
 	def  recipelist
 		@recipeslist=Recipe.all
-		@ingredientslist=Ingredient.all
-		@pictureslist=Picture.all 
 	end
 end

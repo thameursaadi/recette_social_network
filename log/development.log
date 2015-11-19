@@ -19803,3 +19803,24 @@ Completed 200 OK in 40ms (Views: 36.0ms | ActiveRecord: 0.0ms)
 >>>>>>> 19de57efddf90780352af30ed9c526c9a7270108
   [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 6]]
   [1m[35mIngredient Load (0.2ms)[0m  SELECT "ingredients".* FROM "ingredients" INNER JOIN "ingredients_recipes" ON "ingredients"."id" = "ingredients_recipes"."ingredient_id" WHERE "ingredients_recipes"."recipe_id" = ?  [["recipe_id", 6]]
+  [1m[36mRecipe Load (0.4ms)[0m  [1mSELECT "recipes".* FROM "recipes"[0m
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mSQL (240.8ms)[0m  DELETE FROM "recipes" WHERE "recipes"."id" = ?  [["id", 1]]
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mSQL (202.9ms)[0m  DELETE FROM "recipes" WHERE "recipes"."id" = ?  [["id", 2]]
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mSQL (240.0ms)[0m  DELETE FROM "recipes" WHERE "recipes"."id" = ?  [["id", 3]]
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mSQL (230.7ms)[0m  DELETE FROM "recipes" WHERE "recipes"."id" = ?  [["id", 4]]
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mSQL (212.4ms)[0m  DELETE FROM "recipes" WHERE "recipes"."id" = ?  [["id", 5]]
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mSQL (285.9ms)[0m  DELETE FROM "recipes" WHERE "recipes"."id" = ?  [["id", 6]]
+  [1m[36mRecipe Load (0.3ms)[0m  [1mSELECT "recipes".* FROM "recipes"[0m
+  [1m[35mRecipe Load (0.4ms)[0m  SELECT "recipes".* FROM "recipes"
+  [1m[36mRecipe Load (0.3ms)[0m  [1mSELECT "recipes".* FROM "recipes"[0m
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mSQL (235.7ms)[0m  [1mDELETE FROM "recipes" WHERE "recipes"."id" = ?[0m  [["id", 7]]
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36mSQL (214.3ms)[0m  [1mDELETE FROM "recipes" WHERE "recipes"."id" = ?[0m  [["id", 8]]

@@ -1,11 +1,14 @@
 json.array!(@recipeslist) do |recipe|
-	json.extract! recipe , :id, :title, :description
+	json.(recipe , :id, :title, :description)
 
-	json.array!(@ingredientslist) do |ingredient|
-		json.extract! ingredient , :id, :title, :description
+	json.ingredients recipe.ingredients do |ingredient|
+		json.id ingredient.id
+		json.title ingredient.title
 	end
 
-	json.array!(@pictureslist) do |picture|
-		json.extract! picture , :id, :title
+	json.pictures recipe.pictures do |picture|
+		json.id picture.id
+		json.title picture.title
+		json.utl picture.url
 	end
 end

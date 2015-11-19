@@ -11,7 +11,8 @@
     templateUrl: 'assets/templates/auth/_register.html'
 
   .when "/home",
-    templateUrl: 'assets/templates/home/index.html'
+    controller:  'listRecipeCtrl'
+    templateUrl: 'assets/templates/recipe/list-recipe.html'
 
   .when "/addRecipe",
     controller:  'addRecipeCtrl'
