@@ -1,10 +1,10 @@
-.home-container{ ng_controller: 'listRecipeCtrl' }
-  %article{ ng_repeat:"recipe in recipes"}
-    %header
+%div{ ng_controller: 'listRecipeCtrl' }
+  %article.recipe{ ng_repeat:"recipe in recipes"}
+    %header.recipe-title
       {{ recipe.title }}
-    %section
+    %section.recipe-description
       %p
         {{ recipe.description }}
-      %section.pictures
+      %section.image-holder
         %div{ ng_repeat:"img in recipe.pictures"}
           %img{ src:"{{img.url}}" }

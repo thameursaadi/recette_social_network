@@ -4,10 +4,10 @@
   %form
     %input.form-control{ type:"file",id:"file",multiple:true, placeholder: "url", ng_model: "pictureUrl"}
     %br
-    %section
+    %section.image-holder
       %div{ ng_repeat:"picture in pictures"}
         %img{ src:"{{ picture }}"}
     %button.btn{ ng_click: "addPicture()" }
-      add another
+      add
     %button.btn.finishBtn{ ng_click: "finishAddingPictures()" }
       finish

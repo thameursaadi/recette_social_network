@@ -1,8 +1,9 @@
 .home-container{ ng_controller: 'addRecipeCtrl' }
-  %form
-    %input.form-control{ placeholder: "title", ng_model: "recipeName"}
-    %br
-    %textarea.form-control{ placeholder: "description", ng_model: "recipeDescription"}
-    %br
-    %button.btn{ ng_click: "addRecipe()" }
-      Go
+  %h1
+    Add Recipe
+  %input.form-control{ placeholder: "title", ng_model: "recipeName"}
+  %br
+  %textarea.form-control{ placeholder: "description", ng_model: "recipeDescription"}
+  %br
+  %button.btn{ ng_click: "addRecipe()" }
+    Go

@@ -1,8 +1,0 @@
-{:uriI"”file://app/assets/javascripts/templates/home/add-ingredients.html?type=text/html&id=8f71ebb4958ee072594ab9a1fc9dbd106a4f43d5098c4d97abcf822ea72368b4:ET:load_pathI"app/assets/javascripts;T:filenameI"?app/assets/javascripts/templates/home/add-ingredients.html;T:	nameI"#templates/home/add-ingredients;T:logical_pathI"(templates/home/add-ingredients.html;T:content_typeI"text/html;T:sourceI"{<ui-select>
-    <ui-select-choices repeat="ingredient in ingredients">
-      <div> ingredient.title </div>
-    </ui-select>;T:metadata{	:dependencieso:Set:
-@hash{	I"environment-version;TTI"environment-paths;TTI"2processors:type=text/html&file_type=text/html;TTI"Mfile-digest://app/assets/javascripts/templates/home/add-ingredients.html;TT:charsetI"
-utf-8;F:digest"%>ù½y6G§\1¿/5ÏvÅ»
-õY©ÿ™–md÷P:lengthi{:dependencies_digest"%è½ÿÊ÷Jµ,íLq¬şæjÊw…PI®~F‹ù:ª<$F:idI"E8f71ebb4958ee072594ab9a1fc9dbd106a4f43d5098c4d97abcf822ea72368b4;F:
-mtimel+MV

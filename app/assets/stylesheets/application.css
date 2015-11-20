@@ -16,9 +16,42 @@
 
 */
 
-.btn{
-	margin: 5px 0;
+html{
+	height: 100%;
 }
-.finishBtn{
-	float: right;
+
+body{
+	background-color: rgb(240,240,240);
+	min-height: 100%;
 }
+
+.home-container{
+	padding: 50px;
+	background-color: white;
+}
+
+.nav.navbar-nav{
+	background-color: black;
+	color: white;
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+	margin: 0;
+	text-align: left;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+  .nav.navbar-nav > li{
+  	float: none;
+  }
+
+  li.logo{
+  	font-weight: bold;
+	font-size: 18px;
+	margin-right: 20px;
+	box-shadow: 0 5px 5px rgba(0,0,0,0.3)
+  }
+

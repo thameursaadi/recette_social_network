@@ -1,0 +1,22 @@
+.btn{
+	margin: 5px 0
+}
+
+.finishBtn{
+	float: right
+}
+
+section.image-holder {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.image-holder img {
+	width: 150px;
+	height: 150px;
+	margin:2px;
+}
+
+  .image-holder img:hover{
+  	opacity:.8;
+  }

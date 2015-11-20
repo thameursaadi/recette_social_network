@@ -1,8 +1,0 @@
-{:uriI"îfile://app/assets/javascripts/templates/home/add-ingredients.html?type=text/html&id=c16abe5397186190f31d54b7257dfb774681fd2fd3c928579554ab43478fda43:ET:load_pathI"app/assets/javascripts;T:filenameI"?app/assets/javascripts/templates/home/add-ingredients.html;T:	nameI"#templates/home/add-ingredients;T:logical_pathI"(templates/home/add-ingredients.html;T:content_typeI"text/html;T:sourceI"ß<select ui-select2="{ allowClear: true}">
-<option value="one">First</option>
-    <option value="two">Second</option>
-    <option value="three">Third</option>
-</select>;T:metadata{	:dependencieso:Set:
-@hash{	I"environment-version;TTI"environment-paths;TTI"2processors:type=text/html&file_type=text/html;TTI"Mfile-digest://app/assets/javascripts/templates/home/add-ingredients.html;TT:charsetI"
-utf-8;F:digest"%ÏÎ-Õè¸0<‡c√˜XÍèYSäL~*Ê#S:lengthiß:dependencies_digest"%√Q¿sèõ€Å~ıHˆÀ+'∂´¯®wLÖ"≥qhÆ:idI"Ec16abe5397186190f31d54b7257dfb774681fd2fd3c928579554ab43478fda43;F:
-mtimel+J"MV

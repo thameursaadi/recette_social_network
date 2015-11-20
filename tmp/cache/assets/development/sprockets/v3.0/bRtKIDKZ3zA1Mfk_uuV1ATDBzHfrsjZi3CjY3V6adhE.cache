@@ -1,5 +1,0 @@
-I"ƒ(function() {
-  this.cooking = angular.module('cookingRecipes', ['Devise', 'ngRoute', 'templates', 'ngSanitize']);
-
-}).call(this);
-:ET

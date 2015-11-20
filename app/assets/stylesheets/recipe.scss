@@ -1,3 +1,19 @@
 // Place all the styles related to the recipe controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.recipe:first-child{
+	margin-top: 60px;
+}
+
+.recipe{
+	padding: 10px;
+	background-color: white;
+	border-bottom:solid 4px rgb(50,150,200);
+	margin-bottom:10px;
+}
+
+  .recipe-title{
+  	font-size:18px;
+  	font-weight:bold;
+  }

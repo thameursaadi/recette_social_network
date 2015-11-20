@@ -1,5 +1,0 @@
-I"_(function() {
-  this.cooking.controller('homeCtrl', function($scope) {});
-
-}).call(this);
-:ET
