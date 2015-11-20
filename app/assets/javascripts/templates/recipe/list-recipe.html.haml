@@ -7,4 +7,4 @@
         {{ recipe.description }}
       %section.pictures
         %div{ ng_repeat:"img in recipe.pictures"}
-          %img{ src:"img.url" }
+          %img{ src:"{{img.url}}" }

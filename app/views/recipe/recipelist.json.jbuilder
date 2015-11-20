@@ -9,6 +9,6 @@ json.array!(@recipeslist) do |recipe|
 	json.pictures recipe.pictures do |picture|
 		json.id picture.id
 		json.title picture.title
-		json.utl picture.url
+		json.url picture.url
 	end
 end

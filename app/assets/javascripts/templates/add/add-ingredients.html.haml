@@ -2,7 +2,7 @@
   %h1.formTitle
     Select Ingredients {{ ingredient.selected }}
   %ui_select{ "ng-model": "ingredient.selected", theme:"bootstrap", ng_disabled:"disabled", reset_search_input:"false",multiple:true,tagging:"tagTransform"}
-    %ui_select_match{ placeholder:"Enter ingredient name ..."} {{ $select.selected.title }}
+    %ui_select_match{ placeholder:"Enter ingredient name ..."} {{$item.title}}
     %ui_select_choices{ repeat: "ingredient in ingredients" }
       %div{ ng_bind_html: "ingredient.title"}
   %button.btn{ ng_click: "addIngredient()"} Add

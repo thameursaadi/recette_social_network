@@ -6,7 +6,7 @@
     %br
     %textarea.form-control{ placeholder: "description", ng_model: "pictureDescription"}
     %br
-    %textarea.form-control{ placeholder: "url", ng_model: "pictureUrl"}
+    %input.form-control{ type:"file",id:"file", placeholder: "url", ng_model: "pictureUrl"}
     %br
     %button.btn{ ng_click: "addPicture()" }
       add another
