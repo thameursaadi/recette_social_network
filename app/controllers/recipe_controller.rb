@@ -40,4 +40,26 @@ class RecipeController < ApplicationController
 	def  recipelist
 		@recipeslist=Recipe.all
 	end
+
+	def recipeid
+		if Recipe.exists?(:id => params[:id])
+			@verif =true 
+			@recipebyid =Recipe.find(params[:id])
+		else
+			@verif = false
+		end
+	end
+	def recipeuser
+		@iduser = nil
+		if user_signed_in?
+			if User.exists?(current_user.id)
+				@recipebyuser = User.find(current_user.id).Recipe.all
+				@test = true
+			else
+				@test = false
+			end
+		else
+			@test = false
+		end
+	end
 end

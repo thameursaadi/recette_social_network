@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   post "ingredient/add" => "ingredient#add"
   get "ingredient/list" => "ingredient#list"
   get "recipe/recipelist" => "recipe#recipelist"
+  get "recipe/recipeid/:id" => "recipe#recipeid"
 end
