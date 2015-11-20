@@ -1,25 +1,26 @@
 @cooking.controller 'addPictureCtrl', ($scope,$http,$location,$routeParams) ->
+
+  $scope.pictures = []
   $scope.addPicture = ->
+    $.each document.getElementById("file").files, (i,file) ->
+      reader = new FileReader()
+      reader.onloadend = -> 
+        console.log("mkmlk")
+        $scope.pictureUrl = reader.result
+        $scope.pictures.push(reader.result)
+        console.log($scope.pictures)
+        req = $http.post "http://localhost:3000/recipe/"+$routeParams.id+"/picture/add.json", {url: $scope.pictureUrl}
+        req.success (res) ->
+          if(res.success)
+            if i == document.getElementById("file").files.length-1
+              document.getElementById("file").value = ""
+          else
+            alert("error")
 
-    file = document.getElementById("file").files[0]
-    reader = new FileReader()
-
-    reader.onloadend = -> 
-      console.log("mkmlk")
-      $scope.pictureUrl = reader.result
-      req = $http.post "http://localhost:3000/recipe/"+$routeParams.id+"/picture/add.json", { title: $scope.pictureTitle, description: $scope.pictureDescription, url: $scope.pictureUrl}
-      req.success (res) ->
-        if(res.success)
-          $scope.pictureTitle       = ""
-          $scope.pictureDescription = ""
-          $scope.pictureUrl         = ""
-        else
-          alert("error")
-
-    if file
-      reader.readAsDataURL(file)
-    else
-      $scope.pictureUrl = ""
+      if file
+        reader.readAsDataURL(file)
+      else
+        $scope.pictureUrl = ""
 
    
 

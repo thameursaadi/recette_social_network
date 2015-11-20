@@ -1,0 +1,41 @@
+I"(function() {
+  this.cooking.controller('addPictureCtrl', function($scope, $http, $location, $routeParams) {
+    $scope.addPicture = function() {
+      var file, reader;
+      file = document.getElementById("file").files[0];
+      reader = new FileReader();
+      $scope.pictures = [];
+      reader.onloadend = function() {
+        var req;
+        console.log("mkmlk");
+        $scope.pictureUrl = reader.result;
+        $scope.pictures.push(reader.result);
+        console.log($scope.pictures);
+        req = $http.post("http://localhost:3000/recipe/" + $routeParams.id + "/picture/add.json", {
+          title: $scope.pictureTitle,
+          description: $scope.pictureDescription,
+          url: $scope.pictureUrl
+        });
+        return req.success(function(res) {
+          if (res.success) {
+            $scope.pictureTitle = "";
+            $scope.pictureDescription = "";
+            return $scope.pictureUrl = "";
+          } else {
+            return alert("error");
+          }
+        });
+      };
+      if (file) {
+        return reader.readAsDataURL(file);
+      } else {
+        return $scope.pictureUrl = "";
+      }
+    };
+    return $scope.finishAddingPictures = function() {
+      return $location.path("/addIngredients/" + $routeParams.id);
+    };
+  });
+
+}).call(this);
+:ET

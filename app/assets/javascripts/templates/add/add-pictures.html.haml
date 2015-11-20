@@ -2,12 +2,11 @@
   %h1.formTitle
     Add pictures
   %form
-    %input.form-control{ placeholder: "title", ng_model: "pictureTitle"}
+    %input.form-control{ type:"file",id:"file",multiple:true, placeholder: "url", ng_model: "pictureUrl"}
     %br
-    %textarea.form-control{ placeholder: "description", ng_model: "pictureDescription"}
-    %br
-    %input.form-control{ type:"file",id:"file", placeholder: "url", ng_model: "pictureUrl"}
-    %br
+    %section
+      %div{ ng_repeat:"picture in pictures"}
+        %img{ src:"{{ picture }}"}
     %button.btn{ ng_click: "addPicture()" }
       add another
     %button.btn.finishBtn{ ng_click: "finishAddingPictures()" }
