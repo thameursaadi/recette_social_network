@@ -1,0 +1,10 @@
+.home-container{ ng_controller: 'addIngredientsCtrl' }
+  %h2 
+    selected
+    %span{ ng_bind: "ingredient.selected" }
+  %ui_select{ "ng-model": "ingredient.selected", theme:"bootstrap", ng_disabled:"disabled", reset_search_input:"false"}
+    %ui_select_match{ placeholder:"Enter ingredient name ..."} {{ $select.selected.title }}
+    %ui_select_choices{ repeat: "ingredient in ingredients" }
+      %div{ ng_bind_html: "ingredient.title"}
+  %button{ ng_click: "addAnotherIngredient()"} Add another
+  %button{ ng_click: "finishAddingPictures()"} Finish

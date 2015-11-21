@@ -14,6 +14,18 @@
     controller:  'listRecipeCtrl'
     templateUrl: 'assets/templates/recipe/list-recipe.html'
 
+  .when "/user/:id",
+    controller:  'RecipeUserCtrl'
+    templateUrl: 'assets/templates/recipe/list-recipe.html'
+
+  .when "/recipe/:id",
+    controller: 'RecipeDetailsCtrl'
+    templateUrl: 'assets/templates/recipe/details-recipe.html'
+  
+  .when "/recipe/:id/edit",
+    controller: 'editRecipeCtrl'
+    templateUrl: 'assets/templates/recipe/edit-recipe.html'
+
   .when "/addRecipe",
     controller:  'addRecipeCtrl'
     templateUrl: 'assets/templates/add/add-recipe.html'

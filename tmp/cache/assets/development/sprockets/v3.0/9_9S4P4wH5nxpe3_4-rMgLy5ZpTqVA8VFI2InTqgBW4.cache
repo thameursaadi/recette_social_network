@@ -1,0 +1,88 @@
+I"á(function() {
+  this.cooking.controller('editRecipeCtrl', function($scope, $http, $routeParams) {
+    var req;
+    req = $http.get("http://localhost:3000/recipe/recipeid/" + $routeParams.id + ".json");
+    req.success(function(data) {
+      console.log(data);
+      return $scope.recipe = data;
+    });
+    $scope.pictures = [];
+    $scope.addPicture = function() {
+      return $.each(document.getElementById("file").files, function(i, file) {
+        var reader;
+        reader = new FileReader();
+        reader.onloadend = function() {
+          console.log("mkmlk");
+          $scope.pictureUrl = reader.result;
+          $scope.pictures.push(reader.result);
+          console.log($scope.pictures);
+          req = $http.post("http://localhost:3000/recipe/" + $routeParams.id + "/picture/add.json", {
+            url: $scope.pictureUrl
+          });
+          return req.success(function(res) {
+            if (res.success) {
+              if (i === document.getElementById("file").files.length - 1) {
+                return document.getElementById("file").value = "";
+              }
+            } else {
+              return alert("error");
+            }
+          });
+        };
+        if (file) {
+          return reader.readAsDataURL(file);
+        } else {
+          return $scope.pictureUrl = "";
+        }
+      });
+    };
+    req = $http.get("http://localhost:3000/ingredient/list.json");
+    $scope.ingredients = [];
+    req.success(function(data) {
+      $scope.ingredients = data;
+      return console.log(data);
+    });
+    $scope.ingredient = {};
+    $scope.tagTransform = function(newTag) {
+      var item;
+      item = {
+        title: newTag
+      };
+      return item;
+    };
+    return $scope.addIngredient = function() {
+      return $.each($scope.ingredient.selected, function(i, ing) {
+        var reqPush;
+        if (typeof ing.id === 'undefined') {
+          reqPush = $http.post("http://localhost:3000/ingredient/add.json", {
+            title: ing.title
+          });
+          return reqPush.success(function(data) {
+            ing.id = data.id;
+            reqPush = $http.post("http://localhost:3000/recipe/" + $routeParams.id + "/ingredient/add.json", {
+              ingredient_id: ing.id
+            });
+            return reqPush.success(function(data) {
+              console.log(i + "  ==  " + $scope.ingredient.selected.length - 1);
+              if (i === $scope.ingredient.selected.length - 1) {
+                return $scope.ingredient.selected = [];
+              }
+            });
+          });
+        } else {
+          reqPush = $http.post("http://localhost:3000/recipe/" + $routeParams.id + "/ingredient/add.json", {
+            ingredient_id: ing.id
+          });
+          return reqPush.success(function(data) {
+            console.log(i + "  ==  " + $scope.ingredient.selected.length - 1);
+            if (i === $scope.ingredient.selected.length - 1) {
+              return $scope.ingredient.selected = [];
+            }
+          });
+        }
+      });
+    };
+  });
+
+}).call(this);
+:ET

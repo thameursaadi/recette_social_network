@@ -1,0 +1,12 @@
+I"L(function() {
+  this.cooking.controller('editRecipeCtrl', function($scope, $http, $routeParams) {
+    var req;
+    req = $http.get("http://localhost:3000/recipe/recipeid/" + $routeParams.id + ".json");
+    return req.success(function(data) {
+      console.log(data);
+      return $scope.recipe = data;
+    });
+  });
+
+}).call(this);
+:ET

@@ -1,0 +1,20 @@
+%div{  }
+  %article.recipe
+    %header.recipe-title
+      {{ recipe.title }}
+    %h3.recipe-user
+      {{ recipe.email }}
+    %h2
+      Ingredients
+    %section.ingredient-holder
+      %div{ ng_repeat:"ing in recipe.ingredients"}
+        %div.ingredient
+          {{ ing.title }}
+    %h2
+      Description
+    %section.recipe-description
+      %p
+        {{ recipe.description }}
+      %section.image-holder
+        %div{ ng_repeat:"img in recipe.pictures"}
+          %img{ src:"{{img.url}}" }

@@ -1,7 +1,15 @@
-%div{ ng_controller: 'listRecipeCtrl' }
+%div
   %article.recipe{ ng_repeat:"recipe in recipes"}
+    
+    .edit-btn{  }
+      %a{ href: "#/recipe/{{recipe.id}}/edit" } edit
+    
     %header.recipe-title
-      {{ recipe.title }}
+      %a{href:"#/recipe/{{ recipe.id }}"}
+        {{ recipe.title }}
+    %h3.recipe-user
+      %a{href:"#/user/{{ recipe.userid }}"}
+        {{ recipe.email }}
     %section.recipe-description
       %p
         {{ recipe.description }}

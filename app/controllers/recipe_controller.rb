@@ -50,14 +50,9 @@ class RecipeController < ApplicationController
 		end
 	end
 	def recipeuser
-		@iduser = nil
-		if user_signed_in?
-			if User.exists?(current_user.id)
-				@recipebyuser = User.find(current_user.id).Recipe.all
-				@test = true
-			else
-				@test = false
-			end
+		if User.exists?(params[:id])
+			@recipebyuser = User.find(params[:id]).recipes
+			@test = true
 		else
 			@test = false
 		end

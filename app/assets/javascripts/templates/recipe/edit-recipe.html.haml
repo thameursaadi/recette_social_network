@@ -1,0 +1,33 @@
+.home-container{{ ng_controller: 'editRecipeCtrl' }}
+  .offset
+  %input.form-control{  placeholder: "title", ng_model: "recipe.title"}
+  %br
+  %textarea.form-control{ placeholder: "description", ng_model: "recipe.description"}
+  %br
+
+
+
+  %input.form-control{ type:"file",id:"file",multiple:true, placeholder: "url", ng_model: "pictureUrl"}
+  %br
+  %section.image-holder
+    %div{ ng_repeat:"picture in pictures"}
+      %img{ src:"{{ picture }}"}
+  %br
+  %section.image-holder
+    %div{ ng_repeat:"picture in recipe.pictures"}
+      %img{ src:"{{ picture.url }}"}
+  %button.btn{ ng_click: "addPicture()" }
+    add
+
+  %section.ingredient-holder-form
+    %div{ ng_repeat:"ing in recipe.ingredients"}
+      %div.ingredient
+        {{ ing.title }}
+
+  %ui_select{ "ng-model": "ingredient.selected", theme:"bootstrap", ng_disabled:"disabled", reset_search_input:"false",multiple:true,tagging:"tagTransform"}
+    %ui_select_match{ placeholder:"Enter ingredient name ..."} {{$item.title}}
+    %ui_select_choices{ repeat: "ingredient in ingredients" }
+      %div{ ng_bind_html: "ingredient.title"}
+  
+
+  %button.btn{ ng_click: "addIngredient()"} Add

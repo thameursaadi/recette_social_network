@@ -20,3 +20,19 @@ section.image-holder {
   .image-holder img:hover{
   	opacity:.8;
   }
+
+.ingredient-holder-form{
+	display:flex;
+}
+.ingredient-holder-form > div > div{
+	padding: 5px 11px;
+	font-size: 16px;
+	line-height: 1.5;
+	border-radius: 3px;
+	color: #333;
+	background-color: #fff;
+	border-color: #ccc;
+	border-width: 1px;
+	border-style: solid;
+	margin: 13px 8px 8px 0;
+}

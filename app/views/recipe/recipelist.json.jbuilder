@@ -1,6 +1,7 @@
 json.array!(@recipeslist) do |recipe|
 	json.(recipe , :id, :title, :description)
-
+	json.email recipe.user.email
+	json.userid recipe.user.id
 	json.ingredients recipe.ingredients do |ingredient|
 		json.id ingredient.id
 		json.title ingredient.title

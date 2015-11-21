@@ -25,12 +25,18 @@ body{
 	min-height: 100%;
 }
 
+.offset{
+	height: 50px;
+	width: 100%;
+}
+
 .home-container{
 	padding: 50px;
 	background-color: white;
 }
 
 .nav.navbar-nav{
+	z-index: 1;
 	background-color: black;
 	color: white;
 	position: fixed;

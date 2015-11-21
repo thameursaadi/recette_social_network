@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   get "ingredient/list" => "ingredient#list"
   get "recipe/recipelist" => "recipe#recipelist"
   get "recipe/recipeid/:id" => "recipe#recipeid"
+  get "user/:id/recipes" => "recipe#recipeuser"
 end
