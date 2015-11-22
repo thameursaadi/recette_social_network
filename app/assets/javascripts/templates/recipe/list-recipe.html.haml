@@ -1,15 +1,19 @@
 %div
-  %article.recipe{ ng_repeat:"recipe in recipes"}
+  .offset
+  .offset
+  %input.form-control.search{placeholder:"search by title..",ng_model:"searchRecipe.title"}
+  .offset
+  %article.recipe{ ng_repeat:"recipe in recipes|filter:searchRecipe"}
     
     .edit-btn{  }
       %a{ href: "#/recipe/{{recipe.id}}/edit" } edit
-    
-    %header.recipe-title
-      %a{href:"#/recipe/{{ recipe.id }}"}
-        {{ recipe.title }}
     %h3.recipe-user
       %a{href:"#/user/{{ recipe.userid }}"}
         {{ recipe.email }}
+    %header.recipe-title
+      %a{href:"#/recipe/{{ recipe.id }}"}
+        {{ recipe.title }}
+    
     %section.recipe-description
       %p
         {{ recipe.description }}
