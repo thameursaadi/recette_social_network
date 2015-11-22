@@ -1,0 +1,16 @@
+I"'(function() {
+  var sum;
+
+  this.cooking = angular.module('cookingRecipes', ['Devise', 'ngRoute', 'templates', 'ui.select', 'ngSanitize']);
+
+  sum = function(data) {
+    var s;
+    s = 0;
+    $.each(data, function(i, d) {
+      return s = s + d.value;
+    });
+    return s;
+  };
+
+}).call(this);
+:ET

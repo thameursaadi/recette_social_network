@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   post "recipe/:recipe_id/picture/delete" => "picture#delete"
   post "recipe/:id/ingredient/add" => "recipe#addIngredient"
   post "recipe/:id/ingredient/delete" => "recipe#deleteIngredient"
+  post "recipe/:id/rate/add" => "rate#add"
   post "ingredient/add" => "ingredient#add"
   get  "recipe/:id/delete" => "recipe#delete"
   post  "recipe/:id/update" => "recipe#update"

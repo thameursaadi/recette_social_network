@@ -1,0 +1,38 @@
+I"Ð(function() {
+  this.cooking.controller('RecipeDetailsCtrl', function($scope, $http, $routeParams) {
+    var req;
+    req = $http.get("/recipe/recipeid/" + $routeParams.id + ".json");
+    req.success(function(data) {
+      var s;
+      $scope.recipe = data;
+      s = 0.0;
+      $.each($scope.recipe.rates, function(i, d) {
+        console.log(d.value);
+        return s = parseFloat(s) + parseFloat(d.value);
+      });
+      return $scope.rate = parseFloat(s) / parseFloat($scope.recipe.rates.length);
+    });
+    return $scope.addRate = function() {
+      var reqRate;
+      reqRate = $http.post("/recipe/" + $routeParams.id + "/rate/add.json", {
+        value: $scope.rate_value
+      });
+      reqRate.success(function(data) {
+        var req2;
+        return req2 = $http.get("/recipe/recipeid/" + $routeParams.id + ".json");
+      });
+      return req2.success(function(recipeData) {
+        var s;
+        console.log(recipeData);
+        $scope.recipe = recipeData;
+        s = 0.0;
+        $.each(recipeData.rates, function(i, d) {
+          return s = parseFloat(s) + parseFloat(d.value);
+        });
+        return $scope.rate = parseFloat(s) / parseFloat(recipeData.rates.length);
+      });
+    };
+  });
+
+}).call(this);
+:ET
