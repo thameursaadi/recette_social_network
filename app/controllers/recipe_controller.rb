@@ -24,6 +24,9 @@ class RecipeController < ApplicationController
 		User.find(current_user.id).recipes.find(params[:id]).destroy()
 	end
 
+	def update
+		User.find(current_user.id).recipes.find(params[:id]).update(:title => params[:title],:description => params[:description])
+	end
 	#
 	# description : Add an Ingredient to a recipe
 	# paramateres : id : recipe_id, ingredient_id
@@ -32,6 +35,19 @@ class RecipeController < ApplicationController
 		if user_signed_in?
 			if User.exists?(current_user.id)
 				User.find(current_user.id).recipes.find(params[:id]).ingredients.push(Ingredient.find(params[:ingredient_id]))
+				@success = true
+			else
+				@success = false
+			end
+		else
+			@success = false
+		end
+	end
+
+	def deleteIngredient
+		if user_signed_in?
+			if User.exists?(current_user.id)
+				User.find(current_user.id).recipes.find(params[:id]).ingredients.delete(Ingredient.find(params[:ingredient_id]))
 				@success = true
 			else
 				@success = false

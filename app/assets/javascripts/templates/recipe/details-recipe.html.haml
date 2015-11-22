@@ -1,9 +1,12 @@
 %div{  }
   %article.recipe
+    .edit-btn{  }
+      %a{ href: "#/recipe/{{recipe.id}}/edit" } edit
     %header.recipe-title
       {{ recipe.title }}
     %h3.recipe-user
-      {{ recipe.email }}
+      %a{href:"#/user/{{ recipe.userid }}"}
+        {{ recipe.email }}
     %h2
       Ingredients
     %section.ingredient-holder

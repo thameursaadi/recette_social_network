@@ -57,8 +57,38 @@
               $scope.ingredient.selected = []
 
   $scope.delete = ->
-    req = $http.get "/recipe/"+$routeParams.id+"/delete"
+    req = $http.get "/recipe/"+$routeParams.id+"/delete.json"
     req.success (data) ->
       $location.path("/#/home")
+
+
+  $scope.update = ->
+    req = $http.post "/recipe/"+$routeParams.id+"/update.json", { title:$scope.recipe.title,description:$scope.recipe.description}
+    req.success (data) ->
+
+  $scope.deleteIngredient = (id_ing) ->
+    reqDelete = $http.post "/recipe/"+$routeParams.id+"/ingredient/delete.json", { ingredient_id: id_ing}
+    reqDelete.success (data) ->
+      req = $http.get "http://localhost:3000/recipe/recipeid/"+$routeParams.id+".json"
+      req.success (data) ->
+        $scope.recipe = data
+
+  $scope.deletePicture = (picture_id) ->
+    reqDelete = $http.post "/recipe/"+$routeParams.id+"/picture/delete.json", { picture_id : picture_id }
+    reqDelete.success (data) ->
+      req = $http.get "http://localhost:3000/recipe/recipeid/"+$routeParams.id+".json"
+      req.success (data) ->
+        $scope.recipe = data
+
+
+
+
+
+
+
+
+
+
+
 
 
