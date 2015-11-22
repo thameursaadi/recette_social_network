@@ -1,0 +1,58 @@
+I"ª(function() {
+  this.cooking.controller('addIngredientsCtrl', function($scope, $http, $location, $routeParams) {
+    var req;
+    req = $http.get("http://localhost:3000/ingredient/list.json");
+    $scope.ingredients = [];
+    req.success(function(data) {
+      $scope.ingredients = data;
+      return console.log(data);
+    });
+    $scope.ingredient = {};
+    $scope.tagTransform = function(newTag) {
+      var item;
+      item = {
+        title: newTag
+      };
+      return item;
+    };
+    $scope.addedIngredients = [];
+    $scope.addIngredient = function() {
+      return $.each($scope.ingredient.selected, function(i, ing) {
+        var reqPush;
+        if (typeof ing.id === 'undefined') {
+          reqPush = $http.post("http://localhost:3000/ingredient/add.json", {
+            title: ing.title
+          });
+          return reqPush.success(function(data) {
+            ing.id = data.id;
+            reqPush = $http.post("http://localhost:3000/recipe/" + $routeParams.id + "/ingredient/add.json", {
+              ingredient_id: ing.id
+            });
+            return reqPush.success(function(data) {
+              if (i === $scope.ingredient.selected.length - 1) {
+                $scope.ingredient.selected = [];
+              }
+              $scope.addedIngredients.push(ing);
+              return console.log($scope.addedIngredients);
+            });
+          });
+        } else {
+          reqPush = $http.post("http://localhost:3000/recipe/" + $routeParams.id + "/ingredient/add.json", {
+            ingredient_id: ing.id
+          });
+          return reqPush.success(function(data) {
+            console.log(i + "  ==  " + $scope.ingredient.selected.length - 1);
+            if (i === $scope.ingredient.selected.length - 1) {
+              return $scope.ingredient.selected = [];
+            }
+          });
+        }
+      });
+    };
+    return $scope.finish = function() {
+      return $location.path("/home");
+    };
+  });
+
+}).call(this);
+:ET

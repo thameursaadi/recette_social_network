@@ -55,3 +55,10 @@
             console.log(i+"  ==  "+$scope.ingredient.selected.length-1)
             if i == $scope.ingredient.selected.length-1
               $scope.ingredient.selected = []
+
+  $scope.delete = ->
+    req = $http.get "/recipe/"+$routeParams.id+"/delete"
+    req.success (data) ->
+      $location.path("/#/home")
+
+

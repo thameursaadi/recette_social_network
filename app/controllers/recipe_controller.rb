@@ -20,6 +20,10 @@ class RecipeController < ApplicationController
 		end
 	end
 
+	def delete
+		User.find(current_user.id).recipes.find(params[:id]).destroy()
+	end
+
 	#
 	# description : Add an Ingredient to a recipe
 	# paramateres : id : recipe_id, ingredient_id

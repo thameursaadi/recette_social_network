@@ -11,7 +11,7 @@
       title: newTag,
     }
     return item
-
+  $scope.addedIngredients = []
   $scope.addIngredient = ->
     $.each $scope.ingredient.selected, (i,ing) ->
       if typeof ing.id == 'undefined'
@@ -20,13 +20,14 @@
           ing.id = data.id
           reqPush = $http.post "http://localhost:3000/recipe/"+$routeParams.id+"/ingredient/add.json", { ingredient_id: ing.id}
           reqPush.success (data) ->
-            console.log(i+"  ==  "+$scope.ingredient.selected.length-1)
+            $scope.addedIngredients.push(ing)
             if i == $scope.ingredient.selected.length-1
               $scope.ingredient.selected = []
+            
       else
         reqPush = $http.post "http://localhost:3000/recipe/"+$routeParams.id+"/ingredient/add.json", { ingredient_id: ing.id}
         reqPush.success (data) ->
-            console.log(i+"  ==  "+$scope.ingredient.selected.length-1)
+            $scope.addedIngredients.push(ing)
             if i == $scope.ingredient.selected.length-1
               $scope.ingredient.selected = []              
 

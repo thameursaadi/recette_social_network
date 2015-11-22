@@ -42,8 +42,12 @@
   	padding:5px 10px;
   }
 
-  .edit-btn{
+  .edit-btn, .delete-btn{
   	position: absolute;
-	top: 5px;
-	right: 12px;
+	  top: 5px;
+	  right: 12px;
+  }
+
+  .delete-btn{
+    right: 22px;
   }

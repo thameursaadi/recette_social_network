@@ -1,11 +1,12 @@
 .home-container{{ ng_controller: 'editRecipeCtrl' }}
   .offset
+  .delete-btn{  }
+    .offset
+    %a{ href:"#",ng_click: "delete()" } delete
   %input.form-control{  placeholder: "title", ng_model: "recipe.title"}
   %br
   %textarea.form-control{ placeholder: "description", ng_model: "recipe.description"}
   %br
-
-
 
   %input.form-control{ type:"file",id:"file",multiple:true, placeholder: "url", ng_model: "pictureUrl"}
   %br
