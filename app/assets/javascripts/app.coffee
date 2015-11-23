@@ -2,6 +2,6 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-@cooking = angular.module( 'cookingRecipes', ['Devise', 'ngRoute', 'templates','ui.select', 'ngSanitize','ui.bootstrap'] )
+@cooking = angular.module( 'cookingRecipes', ['Devise', 'ngRoute', 'templates','ui.select', 'ngSanitize','ui.bootstrap','ngAnimate'] )
 
 

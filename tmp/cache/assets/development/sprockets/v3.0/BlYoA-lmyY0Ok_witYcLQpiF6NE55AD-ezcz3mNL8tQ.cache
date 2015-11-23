@@ -1,0 +1,9 @@
+I"œ(function() {
+  this.cooking.filter('reverse', function() {
+    return function(items) {
+      return items.slice().reverse();
+    };
+  });
+
+}).call(this);
+:ET

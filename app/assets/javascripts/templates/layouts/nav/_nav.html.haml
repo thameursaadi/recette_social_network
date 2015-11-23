@@ -2,15 +2,33 @@
   %ul.nav.navbar-nav
     %li.logo
       RecipeNetwork
-    %li
-      %a{ href: "#/home" } Home
-    %li{ ng_hide: "signedIn()" }
-      %a{ href: "#/login" } Log In
-    %li{ ng_hide: "signedIn()" }
-      %a{ href: "#/register" } Register
-    %li{ ng_show:  "signedIn()" }
+    %li.hoverable
+      %a{ href: "#/home" } 
+        %i.fa.fa-home
+        Home
+      %div.bottom
+    %li.hoverable{ ng_hide: "signedIn()" }
+      %a{ href: "#/login" }
+        %i.fa.fa-sign-in
+        Log In
+      %div.bottom
+    %li.hoverable{ ng_hide: "signedIn()" }
+      %a{ href: "#/register" }
+        %i.fa.fa-user-plus
+        Register
+      %div.bottom
+    %li.hoverable{ ng_show:  "signedIn()" }
       %a{ href: "#/" } {{ user.email }}
-    %li{ ng_show:  "signedIn()" }
-      %a{ ng_click: "logout()" } Log Out
-    %li{ ng_show: "signedIn()" }
-      %a{ href: "#addRecipe" } Add a recipe
+      %div.bottom
+    %li.hoverable{ ng_show:  "signedIn()" }
+      %a{ ng_click: "logout()" }
+        %i.fa.fa-sign-out
+        Log Out
+      %div.bottom
+    %li.hoverable{ ng_show: "signedIn()" }
+      %a{ href: "#addRecipe" }
+        %i.fa.fa-plus
+        Add a recipe
+      %div.bottom
+
+  

@@ -1,0 +1,24 @@
+I"¦(function() {
+  this.cooking.controller('listRecipeCtrl', function($scope, $http) {
+    var req;
+    req = $http.get("http://localhost:3000/recipe/recipelist.json");
+    $scope.recipes = [];
+    req.success(function(data) {
+      $scope.recipes = data;
+      return $.each($scope.recipes, function(index, recipe) {
+        var s;
+        return s = 0.0;
+      });
+    });
+    $.each(recipe.rates, function(i, d) {
+      var s;
+      console.log(d.value);
+      return s = parseFloat(s) + parseFloat(d.value);
+    });
+    return $scope.recipes[index].rate_value = parseFloat(s) / parseFloat($scope.recipe.rates.length);
+  });
+
+  $scope.recipes[0].rate_value = 3;
+
+}).call(this);
+:ET

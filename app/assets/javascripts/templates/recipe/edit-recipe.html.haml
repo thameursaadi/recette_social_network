@@ -1,8 +1,9 @@
 .home-container{{ ng_controller: 'editRecipeCtrl' }}
   .offset
-  .delete-btn{  }
-    .offset
+  .delete-btn.btn{  }
     %a{ href:"#",ng_click: "delete()" } delete
+  %h2
+    Recipe informations
   %input.form-control{  placeholder: "title", ng_model: "recipe.title"}
   %br
   %textarea.form-control{ placeholder: "description", ng_model: "recipe.description"}
@@ -10,6 +11,8 @@
     update
   %br  
   %br
+  %h2
+    Pictures
   %input.form-control{ type:"file",id:"file",multiple:true, placeholder: "url", ng_model: "pictureUrl"}
   %button.btn{ ng_click: "addPicture()" }
     add
@@ -21,6 +24,8 @@
       %img{ ng_click:"deletePicture(picture.id)",src:"{{ picture.url }}"}
   
   %br
+  %h2
+    Ingredients
   %section.ingredient-holder-form
     %div{ ng_repeat:"ing in recipe.ingredients"}
       %div.ingredient{ ng_click:"deleteIngredient(ing.id)"}
