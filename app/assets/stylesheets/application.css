@@ -57,7 +57,7 @@ a:hover{
 }
 
 .nav.navbar-nav{
-	z-index: 1;
+	z-index: 99;
 	background-color: black;
 	color: white;
 	position: fixed;

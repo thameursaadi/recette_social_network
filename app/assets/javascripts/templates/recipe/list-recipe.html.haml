@@ -16,9 +16,10 @@
           %a{href:"#/recipe/{{ recipe.id }}"}
             {{ recipe.title }}
         %uib_rating.recipe-rate{ng_model:"recipe.rate_value",max:"5",readonly:"isReadonly",on_hover:"hoveringOver(value)",on_leave:"overStar = null",aria_labelledby:"default-rating",ng_click:"addRate(recipe)"}
+    
     %section.recipe-description
       %p
-        {{ recipe.description.substr(300) }} .. 
+        {{ recipe.description.substr(0,400) }} .. 
         %a.readmore{href:"#/recipe/{{ recipe.id }}"}
           read more
       
