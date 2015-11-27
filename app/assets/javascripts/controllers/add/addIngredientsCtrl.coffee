@@ -1,4 +1,6 @@
 @cooking.controller 'addIngredientsCtrl', ($scope,$http,$location,$routeParams) ->
+  if ! (Auth.isAuthenticated())
+    $location.path("/login")
   req = $http.get "http://localhost:3000/ingredient/list.json"
   $scope.ingredients = []
   req.success (data) ->

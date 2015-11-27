@@ -1,7 +1,7 @@
 %div{  }
   %article.recipe
     .div.backgrounded{style:"background-image:url({{recipe.pictures[0].url}})"}
-      .edit-btn.btn{  }
+      .edit-btn.btn{ style:"display:{{recipe.isme}}" }
         %a{ href: "#/recipe/{{recipe.id}}/edit" } edit
       %h3.recipe-user
         %a{href:"#/user/{{ recipe.userid }}"}
@@ -23,6 +23,6 @@
     %section.recipe-description
       %p
         {{ recipe.description }}
-      %section.image-holder
+      %section.image-holder-details
         %div{ ng_repeat:"img in recipe.pictures"}
           %img{ src:"{{img.url}}" }

@@ -20,14 +20,15 @@
 
 html{
 	height: 100%;
-  font-family: "Roboto";
 }
 
 body{
 	background-color: rgb(240,240,240);
 	min-height: 100%;
 }
-
+p{
+  font-family:-webkit-pictograph
+}
 a{
 	color: inherit;
 	text-decoration: inherit;
@@ -58,8 +59,8 @@ a:hover{
 
 .nav.navbar-nav{
 	z-index: 99;
-	background-color: black;
-	color: white;
+	background-color: white;
+	color: black;
 	position: fixed;
 	width: 100%;
 	top: 0;
@@ -70,12 +71,12 @@ a:hover{
 	align-items: center;
 	justify-content: center;
 	overflow: hidden;
+  box-shadow: 0 0 1px rgba(0,0,0,0.3)
 }
 
   .nav.navbar-nav > li{
   	float: none;
-  	color: white;
-  	transition:all ease .5s;
+  	transition:color ease .5s;
   }
   .bottom{
   	bottom: -5px;
@@ -101,7 +102,6 @@ a:hover{
   	font-weight: bold;
 	font-size: 18px;
 	margin-right: 20px;
-	box-shadow: 0 5px 5px rgba(0,0,0,0.3)
   }
 
 
@@ -138,4 +138,18 @@ a:hover{
 
 .readmore{
   font-weight: bold;
+}
+
+.welcome{
+  font-size: 34px;
+  text-align: center;
+}
+
+
+.popup{
+  position: fixed;
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 50px;
+  z-index: 99;
 }

@@ -1,6 +1,15 @@
 json.(@recipebyid , :id, :title, :description)
 json.email @recipebyid.user.email
 json.userid @recipebyid.user.id
+
+if @current_user != nil
+	if @recipebyid.user.id != @current_user.id
+		json.isme "none"
+	end
+else
+	json.isme "none"
+end
+
 json.rates @recipebyid.rates do |rate|
 	json.id rate.id
 	json.value rate.value

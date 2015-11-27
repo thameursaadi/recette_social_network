@@ -4,4 +4,3 @@
 
 @cooking = angular.module( 'cookingRecipes', ['Devise', 'ngRoute', 'templates','ui.select', 'ngSanitize','ui.bootstrap','ngAnimate'] )
 
-

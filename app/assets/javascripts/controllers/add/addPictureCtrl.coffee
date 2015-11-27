@@ -1,5 +1,6 @@
 @cooking.controller 'addPictureCtrl', ($scope,$http,$location,$routeParams) ->
-
+  if ! (Auth.isAuthenticated())
+    $location.path("/login")
   $scope.pictures = []
   $scope.addPicture = ->
     $.each document.getElementById("file").files, (i,file) ->

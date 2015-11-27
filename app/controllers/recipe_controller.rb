@@ -59,9 +59,11 @@ class RecipeController < ApplicationController
 
 	def  recipelist
 		@recipeslist=Recipe.all
+		@current_user = current_user
 	end
 
 	def recipeid
+		@current_user = current_user
 		if Recipe.exists?(:id => params[:id])
 			@verif =true 
 			@recipebyid =Recipe.find(params[:id])
@@ -70,6 +72,7 @@ class RecipeController < ApplicationController
 		end
 	end
 	def recipeuser
+		@current_user = current_user
 		if User.exists?(params[:id])
 			@recipebyuser = User.find(params[:id]).recipes
 			@test = true

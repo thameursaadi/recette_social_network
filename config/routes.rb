@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   get "recipe/recipelist" => "recipe#recipelist"
   get "recipe/recipeid/:id" => "recipe#recipeid"
   get "user/:id/recipes" => "recipe#recipeuser"
+  get "user/:id" => "profil#get"
 end

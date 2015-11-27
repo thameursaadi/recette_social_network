@@ -1,5 +1,8 @@
 @cooking.controller 'RecipeUserCtrl', ($scope,$http,$routeParams) ->
-  req = $http.get "http://localhost:3000/user/"+$routeParams.id+"/recipes.json"
+  reqProfil = $http.get "/user/"+$routeParams.id+".json"
+  reqProfil.success (data) ->
+    $scope.user = data.email
+  req = $http.get "/user/"+$routeParams.id+"/recipes.json"
   $scope.recipes = []
   req.success (data) ->
     $scope.recipes = data

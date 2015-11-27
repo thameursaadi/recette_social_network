@@ -1,8 +1,15 @@
-@cooking.controller 'editRecipeCtrl', ($scope,$http,$routeParams) ->
+@cooking.controller 'editRecipeCtrl', ($scope,Auth,$http,$routeParams,$location) ->
   req = $http.get "http://localhost:3000/recipe/recipeid/"+$routeParams.id+".json"
   req.success (data) ->
     console.log(data)
     $scope.recipe = data
+    console.log(Auth.isAuthenticated())
+    if $scope.recipe.isme == "none"
+      if ! (Auth.isAuthenticated())
+        $location.path("/login")
+      else
+        $location.path("/recipe/"+$routeParams.id)
+
   $scope.pictures = []
   $scope.addPicture = ->
     $.each document.getElementById("file").files, (i,file) ->

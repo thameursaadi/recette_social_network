@@ -16,7 +16,7 @@
 
   .when "/user/:id",
     controller:  'RecipeUserCtrl'
-    templateUrl: 'assets/templates/recipe/list-recipe.html'
+    templateUrl: 'assets/templates/recipe/profil.html'
 
   .when "/recipe/:id",
     controller: 'RecipeDetailsCtrl'
