@@ -4,7 +4,9 @@ class ProfilController < ApplicationController
 	end
 
 	def follow
-		User.find(current_user.id).active_relationships.create(:followed_id => params[:id])
+		if User.find(current_user.id).active_relationships.exists?(:followed_id => params[:id]) == false
+			User.find(current_user.id).active_relationships.create(:followed_id => params[:id])
+		end
 	end
 
 	def nombreFollowers
