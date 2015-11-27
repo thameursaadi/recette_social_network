@@ -1,4 +1,7 @@
 @cooking.controller 'RecipeUserCtrl', ($scope,$http,$routeParams) ->
+  reqFollowers = $http.get "user/"+$routeParams.id+"/nbrFollowers.json"
+  reqFollowers.success (data) ->
+    $scope.nombreFollowers = data.n
   reqProfil = $http.get "/user/"+$routeParams.id+".json"
   reqProfil.success (data) ->
     $scope.user = data.email
@@ -16,3 +19,7 @@
   $scope.addRate = (recipe) ->
     reqRate = $http.post "/recipe/"+recipe.id+"/rate/add.json",{ value:recipe.rate_value }
     reqRate.success (data) ->
+
+  $scope.follow = () ->
+    reqFollow = $http.post "/user/"+$routeParams.id+"/follow.json"
+    reqFollow.success ->

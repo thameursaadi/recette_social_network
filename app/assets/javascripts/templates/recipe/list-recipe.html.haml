@@ -1,12 +1,6 @@
 %div
   .offset
   .offset.small
-  .welcome
-    %div.line1
-      Welcome to
-    %div.line2
-      The Recipe Network
-  .offset
   %input.form-control.search{placeholder:"search by title..",ng_model:"searchRecipe.title"}
   .offset.small
   %article.recipe{ ng_repeat:"recipe in recipes|filter:searchRecipe|reverse"}

@@ -14,6 +14,10 @@
     controller:  'listRecipeCtrl'
     templateUrl: 'assets/templates/recipe/list-recipe.html'
 
+  .when "/followed",
+    controller:  'RecipeFollowed'
+    templateUrl: 'assets/templates/recipe/followed.html'
+
   .when "/user/:id",
     controller:  'RecipeUserCtrl'
     templateUrl: 'assets/templates/recipe/profil.html'

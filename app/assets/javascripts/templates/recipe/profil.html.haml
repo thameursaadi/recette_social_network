@@ -5,8 +5,8 @@
     %div.user-name
       {{ user }}
     %i.fa.fa-users
-    1200 folllowers
-    .btn
+    {{ nombreFollowers }} folllowers
+    .btn{ ng_click:"follow()"}
       follow
   .offset
   %input.form-control.search{placeholder:"search by title..",ng_model:"searchRecipe.title"}

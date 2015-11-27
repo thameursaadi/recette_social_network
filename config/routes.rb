@@ -16,4 +16,7 @@ Rails.application.routes.draw do
   get "recipe/recipeid/:id" => "recipe#recipeid"
   get "user/:id/recipes" => "recipe#recipeuser"
   get "user/:id" => "profil#get"
+  post "user/:id/follow" => "profil#follow"
+  get "user/:id/nbrFollowers" => "profil#nombreFollowers"
+  get "followed" => "profil#followed"
 end
